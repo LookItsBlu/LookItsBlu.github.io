@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title>Soundodger Tools</title>
+	
+	<link rel="stylesheet" href="style.css"/>
+	
+	<!-- jQuery + jQueryUI -->
+	<script src="scripts/jQuery.min.js"></script>
+	<script src="scripts/jQueryUI/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="scripts/jQueryUI/jquery-ui.min.css"/>
+</head>
+<body>
+
+	<header>
+		<img src="img/title.png"/>
+	</header>
+	
+	<div id="Reverse">
+		<div class="menu">
+			<h1>Reverser<sup>(?)</sup></h1>
+			
+			<textarea class="codeArea original Reverse" spellcheck="false"></textarea>
+			<span class="inputDesc">rewind speed:</span>
+			<input class="rewindSpeed" type="number" value="1"></input>
+			
+			<button class="actionButton Reverse">Reverse</button>
+		</div>
+		
+		<div class="result">
+			<h1>Reversed code</h1>
+			<textarea class="codeArea final Reverse" spellcheck="false"></textarea>
+			<button class="redoButton Reverse">Reverse something else</button>
+		</div>
+	</div>
+	
+	
+	<div id="BulletMover">
+		<div class="menu">
+			<h1>Bullet Mover<sup>(?)</sup></h1>
+			
+			<textarea class="codeArea original BulletMover" spellcheck="false"></textarea>
+			<span class="inputDesc">Added time:</span>
+			<input class="addedTime" type="number" value="1"></input>
+			
+			<button class="actionButton BulletMover">Move the bullets</button>
+		</div>
+		
+		<div class="result">
+			<h1>Moved code</h1>
+			<textarea class="codeArea final BulletMover" spellcheck="false"></textarea>
+			<button class="redoButton BulletMover">Move more bullets</button>
+		</div>
+	</div>
+	
+	<script src="scripts/SDT_Core.js"></script>
+	<script src="scripts/animations.js"></script>
+	<script src="scripts/gadgets.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,27 @@
+body { margin: 0; padding: 0; }
+
+h1 { font: 30px 'Century Gothic'; color: #001234; }
+hr { border: 1px solid #EB5701; margin: 20px 0; }
+sup {font-size: 14px;}
+
+header { height: 150px; border-bottom: 3px solid #EB5701; margin-bottom: 25px;}
+header img { display: block; margin: 0 auto; }
+
+body > div { margin-bottom: 25px; }
+
+#Reverse, #BulletMover, #PatternExtender {
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid #EB5701;
+	text-align: center;
+	padding-bottom: 20px;
+	overflow: hidden;
+}
+
+.codeArea { width: 90%; height: 300px; white-space: nowrap; }
+.inputDesc { display: block; font-family: 'Century Gothic'; font-size: 20px; margin: 15px 0; }
+.actionButton { display: block; margin: 15px auto 0 auto; }
+
+.result { display: none; }
+.redoButton { display: block; margin: 15px auto 0 auto; }
