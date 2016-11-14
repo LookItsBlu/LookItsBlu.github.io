@@ -1,0 +1,180 @@
+/*
+Design d'exemple Pour éco-E-classeur
+Réalisé par C. Ringot
+*/
+
+html
+{
+cursor: url("images/Stylet.ani");
+}
+
+body
+{
+   width: 850px
+   margin: auto;
+   margin-top: 10px;
+   margin-bottom: 20px;    
+   background-image: url("images/Magical Forest.jpg");
+}
+
+/* L'en-tête */
+
+#en_tete
+{
+   width: 255px;
+   height: 200px;
+   background-image: url("images/laptop computers.jpg");
+   background-position:00px 00px;
+   background-repeat: repeat-x; 
+   margin-bottom: 10px;
+}
+
+#en_tete h2
+{    
+   color: #0789f0;
+   font-family: Arial, "Arial Black", "Times New Roman", Times, serif;
+   padding-top: 20px;
+}
+
+/* Le menu */
+
+#menu
+{
+   float: left;
+   width: 145px;
+}
+
+.element_menu
+{
+   background-color: #ffffff;
+   background-image: url("images/materiel-informatique.jpg");
+   background-repeat: repeat-x;
+   
+   border: 2px solid black;
+   
+   margin-bottom: 20px;
+}
+
+
+/* Quelques effets sur les menus */
+
+
+.element_menu h3
+{    
+   color: #120fe5;
+   font-family: Arial, "Arial Black", "Times New Roman", Times, serif;
+   text-align: center;
+}
+
+.element_menu ul
+{
+   list-style-image: url("images/arrow right.jpg");
+   padding: 0px;
+   padding-left: 30px;
+   margin: 5px;
+   margin-bottom: 5px;
+}
+
+.element_menu a
+{
+   color: #000000;
+}
+
+.element_menu a:hover
+{
+   background-color: #000000;
+   color: rgb(255,255,255);
+   cursor: url(images/Stylet_bleu.ani);
+}
+
+/* Menu de droite */
+
+#menu_droite
+{
+   float: right;
+   width: 145px;
+}
+
+.element_menu_droite
+{
+   background-color: #ffffff;
+   background-image: url("images/materiel-informatique.jpg");
+   background-repeat: repeat-x;
+   
+   border: 2px solid black;
+   
+   margin-bottom: 20px;
+}
+
+
+/* Quelques effets sur les menus */
+
+
+.element_menu_droite h3
+{    
+   color: #120fe5;
+   font-family: Arial, "Arial Black", "Times New Roman", Times, serif;
+   text-align: center;
+}
+
+.element_menu_droite ul
+{
+   list-style-image: url("images/arrow right.jpg");
+   padding: 0px;
+   padding-left: 30px;
+   margin: 5px;
+   margin-bottom: 5px;
+}
+
+.element_menu_droite a
+{
+   color: #000000;
+}
+
+.element_menu_droite a:hover
+{
+   background-color: #000000;
+   color: rgb(255,255,255);
+   cursor: url(images/Stylet_bleu.ani);
+}
+
+
+/* Le corps de la page */
+
+#corps
+{
+   margin-left: 150px;
+   margin-right: 150px;
+   margin-bottom: 20px;
+   padding: 5px;
+   text-align: center;
+   
+   color: #000000; /*#5b0000*/
+   background-color: #ffffff; /*#940000*/
+   
+   border: 2px solid black;
+}
+
+#corps h1
+{
+   color: #0789f0; /*#5b0000*/
+   text-align: center;
+   font-family: Arial, "Arial Black", "Times New Roman", Times, serif;
+}
+
+
+/* Le pied de page (qui se trouve tout en bas, en général pour les copyrights) */
+
+#pied_de_page
+{
+   padding: 75px;
+   clear: both;
+   text-align: center;
+
+   color: #0789f0;
+   background-color: #006060;
+   background-image: url("images/etat civil.jpg");
+   background-repeat: repeat-x;
+   
+   border: 2px solid black;
+}

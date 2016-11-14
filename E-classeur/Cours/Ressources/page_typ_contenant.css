@@ -1,0 +1,69 @@
+/*
+Design d'exemple Pour pour page web
+Réalisé par C. Ringot
+*/
+ 
+ /* mise forme de la page web*/
+Body        /* Balise sur laquelle nous allons définir l'aspect */     	
+{
+   width: 770px;          /* Pour les visiteurs ayant une résolution 800*600, afin
+                             qu'ils visualisent la page en entier */
+   margin: auto;          /* Pour centrer la page */
+   margin-top: 10px;      /* Pour décoller le haut de la page, de la fenêtre du
+                             navigateur */
+   margin-bottom: 20px;   /* Idem pour le bas du navigateur */
+   background: url("images/l'oeil Transparent.png") repeat-y scroll center;
+                          /* Une petite image de fond pour dynamiser la page et faire moins vide*/
+}
+
+/* mise en forme de l'en-tête */
+#en_tete
+{
+   width: 750px;                     /* ?????*/
+   height: 100px;                    /* ?????*/
+   background-color: rgb(0,128,0);   /* ?????*/
+   margin-bottom: 10px;              /* ?????*/
+}
+
+/* mise en forme de la photo */
+#important
+{
+   
+   background:url("images/planète connectée.jpg") no-repeat 150px 40px  /* ?????*/
+   background-color: rgb(0,255,0);                                      /* ?????*/
+   margin-bottom: 10px;
+}
+
+/* mise en forme de l'état civil */
+.etat_civil   /* quel est le type de cette balise ? */
+{                    /* vois tu l'image s'afficher? */
+   background-image: url("images/marianne-daussy-etat-civil"); /*????*/
+   background-repeat: repeat-x;                                /*????*/
+                     /* as tu compris le problème qui se pose? */ 
+   border: 2px solid black;                                    /* ?????*/ 
+   
+   margin-bottom: 20px;
+}
+
+
+/* mise en forme de la partie santé */
+
+
+.sante h3
+{    
+   color: #B3B3B3;
+   font-family: Arial, "Arial Black", "Times New Roman", Times, serif;
+   text-align: center;
+}
+
+.sante ul
+{
+   list-style-image: url("images/organisation-mondiale-de-la-sante-réduit.jpg");
+   padding: 15px;
+   padding-left: 50px;
+   margin: 0px;
+   margin-bottom: 5px;
+  
+}
+/* ET AINSI DE SUITE */
+/* mais attention aux fautes de goùt */

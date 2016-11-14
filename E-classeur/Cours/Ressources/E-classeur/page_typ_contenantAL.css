@@ -1,0 +1,91 @@
+/*
+Design d'exemple Pour page web
+Réalisé par C. Ringot
+*/
+ 
+html
+{
+cursor: url("images/Stylet.ani");
+}
+
+/* mise forme de la page web*/
+
+Body	/* Balise sur laquelle nous allons définir l'aspect */
+{
+width: 770px;	/* Pour les visiteurs ayant une résolution 800*600, afin qu'ils visualisent la page en entier */
+margin: auto;	/* Pour centrer la page */
+margin-top: 10px;	/* Pour décoller le haut de la page, de la fenêtre du navigateur */
+margin-bottom: 20px;	/* Idem pour le bas du navigateur */
+background-image: url("images/Magical Forest.jpg");	/* Une petite image de fond pour dynamiser le fond de la page et faire moins vide*/
+}
+
+/* mise en forme de l'en-tête */
+
+#en_tete
+
+{
+   background-color: #c0362c;
+   margin-bottom: 50px;
+}
+
+/* mise en forme de l'état civil */
+
+.etat_civil	/* quel est le type de cette balise ? */
+{
+   background-image: url("images/etat civil.jpg");	/*affiche une image*/ 
+   border: 1px solid black;	/* affiche un contour*/ 
+   margin-bottom: 20px;
+}
+
+
+/* mise en forme de la partie santé */
+
+
+.sante
+{    
+   text-align: left;
+   background-color: #c0362c;
+   border: 2px solid black
+}
+
+.sante ul
+{
+   list-style-image: url("images/organisation-mondiale-de-la-sante-réduit.jpg");
+   padding: 15px;
+   padding-left: 50px;
+   margin: 0px;
+   margin-bottom: 5px;
+}
+
+#scolarite
+{
+   background-color: #c0362c;
+   border: 2px solid black;
+}
+
+#projet
+{
+   background-color: #c0362c;
+   border: 2px solid black;
+}
+
+#materiel
+{
+   background-color: #c0362c;
+   border: 2px solid black;
+}
+
+#pied_de_page
+{
+   background-color: #c0362c;
+   padding-right: 20px;
+   border: 2px solid black;
+}
+
+#index a:hover
+{
+   cursor: url("images/Stylet_bleu.ani");
+}
+
+/* ET AINSI DE SUITE */
+/* mais attention aux fautes de goùt */
