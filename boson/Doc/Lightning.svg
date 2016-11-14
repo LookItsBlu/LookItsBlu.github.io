@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="32px"
+   version="1.1"
+   viewBox="0 0 32 32"
+   width="32px"
+   id="svg2"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="Lightning.svg">
+  <metadata
+     id="metadata13">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1360"
+     inkscape:window-height="705"
+     id="namedview11"
+     showgrid="false"
+     inkscape:zoom="10.429825"
+     inkscape:cx="13.995463"
+     inkscape:cy="16.264666"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Icons new Arranged Names" />
+  <defs
+     id="defs6" />
+  <g
+     id="Icons new Arranged Names"
+     style="fill:#2d4e6a;fill-opacity:1;fill-rule:evenodd;stroke:none"
+     transform="matrix(2.8333333,0,0,2.8333333,-22,-40.333333)"
+     inkscape:export-filename="C:\Users\FRANCK\Desktop\Sites\Boson T\img\editor\noenergy.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90">
+    <g
+       id="87 Lightning"
+       style="fill:#2d4e6a;fill-opacity:1"
+       transform="translate(-2.5718102,3.959234)">
+      <path
+         d="M 14.714286,10 19,10 16.55102,15 20,15 13,22 14.428571,17 12,17 z m 0,0"
+         id="Rectangle 297 copy"
+         style="fill:#2d4e6a;fill-opacity:1"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>

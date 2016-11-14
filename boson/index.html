@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <meta charset="UTF-8" />
+    <title>Boson-T</title>
+	
+	<link rel="stylesheet" type="text/css" href="index.css" />
+	
+	<!-- jQuery -->
+	<script src="scripts/jQuery.min.js"></script>
+	<script src="scripts/jQueryUI/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div class="list circle">
+        <a class="menu downloadLauncher" href="#1"></a>
+        <a class="menu levelEditor" href="#2"></a>
+        <a class="menu levelList" href="#3"></a>
+        <a class="menu leaderboards" href="#4"></a>
+        <a class="menu about" href="#5"></a>
+        <div class="center fix"></div>
+		<!--<div class="center connect">Connect</div>-->
+    </div>
+	
+	<nav class="list links" role="navigation">
+		<a class="link downloadLauncher" href="#Download">launcher</a>
+		<a class="link levelEditor" href="#Editor">level creator</a>
+		<a class="link levelList"  href="#List">level list</a>
+		<a class="link leaderboards" href="#Leaderboards">leaderboards</a>
+		<a class="link about" href="#About">about</a>
+	</nav>
+	
+	<script>
+		$(document).ready(function(){
+			var classList = "";
+			
+			$(".list a").mouseenter(function(){
+				classList = $(this).attr("class").split(" ");
+				
+				if (classList[0] == "link"){ $(".menu." + classList[1]).addClass("activate"); }
+				else{ $(".link." + classList[1]).addClass("activate"); }
+			})
+			.mouseleave(function(){
+				if (classList[0] == "link"){ $(".menu." + classList[1]).removeClass("activate"); }
+				else{ $(".link." + classList[1]).removeClass("activate"); }
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <meta charset="UTF-8">
+    <title>Boson-T | level list</title>
+	<link rel="stylesheet" type="text/css" href="levelList.css">
+    
+    <!-- jQuery -->
+	<script src="scripts/jQuery.min.js"></script>
+	<script src="scripts/jQueryUI/jquery-ui.min.js"></script>
+    
+    <script src="scripts/underscore-min.js"></script>
+</head>
+
+<body>
+    <div class="menu left">
+        <div class="top">
+            <div class="mainMenu default">
+                <div class="mainMenu hover"></div>
+            </div>
+            
+            <p class="experimentsText">Experiments Available</p>
+            
+            <div class="search">
+                <input type="input" placeholder="Search for a level" class="levelSearch"/>
+                <span>Sort by: </span>
+                <select class="dropdown sorting">
+                    <option>Date</option>
+                    <option>Alphabetical</option>
+                    <option>Difficulty</option>
+                </select>
+                <input type="checkbox" class="ascending" name="Ascending"/>
+                <span>Ascending</span>
+            </div>
+        </div>
+        
+        <div class="levelList"></div>
+    </div>
+    
+    <div class="menu right"></div>
+    
+    <script src="scripts/levelList.js"></script>
+</body>
+</html>

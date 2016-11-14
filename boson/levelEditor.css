@@ -1,0 +1,97 @@
+* { outline: 0; }
+html, body { width: 100%; height: 100%; margin: 0; padding: 0;}
+@font-face { font-family: 'zeroes'; src: url('zeroes two.ttf'); }
+
+.top {
+  display: flex;
+  height: 75px;
+  line-height: 75px;
+  background-color: #316FA2;
+  font-family: 'zeroes';
+  font-size: 12px;
+  color: white;
+}
+
+.mainMenu {
+  width: 74px;
+  height: 71px;
+  margin-left: 5px;
+  margin-top: 2px;
+  background-image: url('img/Logo Small.png');
+  cursor: pointer;
+}
+.mainMenu.hover {
+  background-image: url('img/Logo Small Hover.png');
+  opacity: 0;
+  margin: 0;
+  transition: opacity 0.5s;
+}
+.mainMenu:hover  .mainMenu.hover { opacity: 1; }
+
+.option, .dropdown {
+  cursor: pointer;
+  transition: background-color 0.25s ease-out, background-position-y 0.15s;
+  
+  -webkit-user-select: none;
+     -mox-user-select: none;
+}
+.option:hover, .dropdown:hover { background-color: #285982; background-position-y: -38px; }
+
+.right .submenu .option { padding: 0 10px; }
+
+.submenu, .left, .right { display: flex; }
+.left .submenu { margin-left: 20px; }
+.right .submenu { margin-right: 20px; }
+.right { position: absolute; right: 0; }
+
+.sectionSelect {
+  margin-right: 20px;
+  border: none;
+  background-color: transparent;
+  font-family: 'zeroes';
+  color: white;
+  -webkit-appearance: none;
+}
+.sectionSelect option {
+  background-color: #316FA2;
+  transition: background-color 0.25s ease-out;
+}
+.sectionSelect option:checked { display:none; }
+
+
+/*=======================*/
+/*         ICONS         */
+/*=======================*/
+
+.addSection { background: url('img/editor/icons.png') -152px 0 no-repeat; width: 38px; height: 38px; }
+.delSection { background: url('img/editor/icons.png') -190px 0 no-repeat; width: 38px; height: 38px; }
+.noenergy { background: url('img/editor/icons.png') -114px 0 no-repeat; width: 38px; height: 38px; }
+
+.addBottom { background: url('img/editor/icons.png') 0 0 no-repeat; width: 38px; height: 38px; }
+.addTop { background: url('img/editor/icons.png') -38px 0 no-repeat; width: 38px; height: 38px; }
+.delete { background: url('img/editor/icons.png') -76px 0 no-repeat; width: 38px; height: 38px; }
+
+.left .submenu .option { margin-top: 18.5px; }
+
+
+.tabs {
+  text-align: center;
+  background-color: #2D4E6A;
+  font-family: 'zeroes';
+  
+  -webkit-user-select: none;
+     -mox-user-select: none;
+}
+
+.tabs a { color: white; text-decoration: none; }
+.tab {
+  display: inline-block;
+  padding: 3px 50px;
+  font-size: 20px;
+  text-decoration: none;
+  background-color: #2D4E6A;
+  transition: background-color 0.25s;
+}
+.tab:hover { background-color: #365E7F; }
+
+.levelEditor { overflow-y: scroll; height: calc(100vh - 109px); }
