@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>SEGWAY TO SATURN</title>
+	
+	<link rel="stylesheet" href="style.css"></link>
+	
+	<script src="konami.js"></script>
+	<script>
+		/*
+		RAINBOW TEXT Script by Matt Hedgecoe (c) 2002
+		Featured on JavaScript Kit
+		For this script, visit http://www.javascriptkit.com
+		*/
+
+		// ********** MAKE YOUR CHANGES HERE
+
+		var speed=10 // SPEED OF FADE
+
+		// ********** LEAVE THE NEXT BIT ALONE!
+
+
+		var hex=new Array("00","14","28","3C","50","64","78","8C","A0","B4","C8","DC","F0")
+		var r=1
+		var g=1
+		var b=1
+		var seq=1
+		function changetext(){
+		rainbow="#"+hex[r]+hex[g]+hex[b]
+		document.getElementById('sweg').style.color=rainbow
+		}
+		function change(){
+		if (seq==6){
+		b--
+		if (b==0)
+		seq=1
+		}
+		if (seq==5){
+		r++
+		if (r==12)
+		seq=6
+		}
+		if (seq==4){
+		g--
+		if (g==0)
+		seq=5
+		}
+		if (seq==3){
+		b++
+		if (b==12)
+		seq=4
+		}
+		if (seq==2){
+		r--
+		if (r==0)
+		seq=3
+		}
+		if (seq==1){
+		g++
+		if (g==12)
+		seq=2
+		}
+		changetext()
+		}
+		function starteffect(){
+		if (document.all||document.getElementById)
+		flash=setInterval("change()",speed)
+		}
+		starteffect()
+	</script>
+	
+	<script src="jquery-1.11.2.min.js"></script>
+</head>
+	
+<body style="background-image: url('Beyond the Memes.jpg'); background-size: 100%;">
+	<!--I'm sorry.-->
+	
+	<div id="sweg">
+		<h1>SEGWAY TO SATURN</h1>
+		<h2>all your favorite songs from Road to Jupiter... <span class="shakeitoff">in Nightcore!</span></h2>
+		<h2 class="noiseName"></h2>
+	</div>
+	
+	<img id="earthwormJim" src="human's rock.png"/>
+	<img id="actualPlanet" src="atari saturn.png"/>
+	
+	<div id="wolfgunsSpaceship">
+		<img src="wolfgun's swegway.png"/> <!--?v=kCbUPHKuE08-->
+	</div>
+	
+	<audio id="moreLikeWhycore" src=""></audio>
+	<script>moreLikeWhycore.volume=0.5;</script>
+	
+	<script>
+		//List of all the whycore... "songs"
+		var noises = [
+			"ROAD TO saturn",
+			"Beyond the starlight",
+			"Dwarf",
+			"There's no hope",
+			"Lakes of tears",
+			"The Grate",
+			"Xanadon't",
+			"JuNO!",
+			"Demons",
+			"Message from the Dead",
+			"As Segways Fall",
+			"TIME IS DEAD AND MEANING HAS NO MEANING", //get the reference? if you don't, shame on you!
+			"OH GOD I'M FINALY DONE WITH THIS SHIT"
+		]
+		var nb=0;
+		
+		$(document).keydown(function (event){
+			if (event.which == 40)
+				nb--;
+			else if (event.which == 38)
+				nb++;
+			else
+				return 0;
+			
+			if (nb > noises.length-1) { nb = 0; }
+			else if (nb < 0) { nb = noises.length-1; }
+			
+			update();
+		});
+		
+		$("#moreLikeWhycore").bind("ended", function (){
+			nb++;
+			if (nb > noises.length-1) { nb = 0; }
+			else if (nb < 0) { nb = noises.length-1; }
+			
+			update();
+		});
+		
+		
+		function update() {
+			$(".noiseName").html(noises[nb]+" // ▲|▼ for more");
+			moreLikeWhycore.setAttribute("src", "SEGWAY TO SATURN/"+noises[nb]+".mp3");
+			moreLikeWhycore.play();
+		}
+		update();
+		
+		
+		var easter_egg = new Konami(function() { 
+			$(".noiseName").html("SEGWAY TO SATURN HOTTEST MIXTAPE // ▲|▼ for more");
+			moreLikeWhycore.setAttribute("src", "SEGWAY TO SATURN/HOTTEST MIXTAPE.mp3");
+			moreLikeWhycore.play();
+		});
+	</script>
+</body>
+</html>
