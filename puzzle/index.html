@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<meta charset="utf8"></meta>
+<title>Anthony's puzzle box</title>
+
+<script src="Scripts/jquery.min.js"></script>
+<script src="Scripts/jquery-ui/jquery-ui.min.js"></script>
+<link  rel="stylesheet" href="Scripts/jquery-ui/jquery-ui.min.css"/>
+
+<link  rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+<audio id="Music" loop>
+</audio>
+
+<div id="pieceAmountText">nombre de pieces:</div>
+<div id="pieceAmount"></div>
+<div id="pieceAmountValue"></div>
+<br/>
+<div id="helpOpacityText">opacité de l'image d'aide:</div>
+<div id="helpOpacity"></div>
+<div id="helpOpacityValue"></div>
+<br/>
+
+<input id="imageLink" type="text" placeholder="lien vers l'image" style="width: 300px;">
+<button onclick="changeImageSource(imageLink.value)">charger</button>
+
+<div id="saveArea">
+	<button id="createSaveTextButton" onclick="createSave()">créer une sauvegarde</button>
+	<button id="loadSaveButton" onclick="loadSave()">charger une sauvegarde</button>
+	<button id="deleteSaveButton" onclick="confirmDelete()">Effacer une sauvegarde</button>
+</div>
+
+<div id="puzzlePieces">
+</div>
+
+<div id="puzzleContainer">
+</div>
+
+<script src="Scripts/create-grid.js"></script>
+<script src="Scripts/create-pieces.js"></script>
+<script src="Scripts/changeImageSource.js"></script>
+<script src="Scripts/save.js"></script>
+<script>
+var pieceAmount = 0;
+var Size = 5;
+var imgSource = "src/puzzleImage.png";
+var oldSource = imgSource;
+
+$(document).ready(function(){
+	
+	changeImageSource(imgSource);
+	createGrid(Size);
+	createPieces(Size, imgSource);
+	
+	$("#pieceAmountValue").html(Size*Size);
+	$( "#pieceAmount" ).slider({
+		min: 3,
+		max: 20,
+		value: 5,
+		step: 1,
+		slide: function( event, ui ) {
+			Size = ui.value;
+			createGrid(Size);
+			createPieces(Size, imgSource);
+			$("#pieceAmountValue").html(Size*Size);
+		}
+	});
+	
+	var opacityValueDefault = $("#puzzleContainer img").css("opacity");
+	var opacityValue = "";
+	$("#helpOpacityValue").html(opacityValueDefault);
+	$( "#helpOpacity" ).slider({
+		min: 0,
+		max: 1,
+		value: 0.25,
+		step: 0.05,
+		slide: function( event, ui ) {
+			$("#puzzleContainer img").css("opacity", ui.value);
+			$("#puzzleContainer video").css("opacity", ui.value);
+			$("#puzzleContainer iframe").css("opacity", ui.value);
+			opacityValue = ui.value.toPrecision(2);
+			$("#helpOpacityValue").html(opacityValue);
+		}
+	});
+	
+	$(".piece").on("click", function(){
+		$(".piece").css("z-index", 50);
+		$(this).css("z-index", 51);
+	});
+	$(".piece").on("dragstart", function(){
+		$(".piece").css("z-index", 50);
+		$(this).css("z-index", 51);
+	});
+});
+</script>
+</body>
+</html>

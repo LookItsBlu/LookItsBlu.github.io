@@ -1,0 +1,70 @@
+body { background-color: rgb(242, 242, 242); }
+
+#pieceAmount, #helpOpacity { width: 250px; }
+#pieceAmountValue, #helpOpacityvalue {
+  margin-top: -16px;
+  margin-left: 270px;
+  position: absolute;
+}
+
+#saveArea {
+  position: absolute;
+  width: 135px;
+  height: 150px;
+  display: block;
+  margin-top: 5%;
+  margin-left: 10%;
+  text-align: center;
+}
+#saveArea button { margin-bottom: 10px; }
+
+#puzzlePieces {
+  position: fixed;
+  top: 0%;
+  left: 75%;
+  width: 20%;
+  height: 100%;
+  background-color: #0c0c0c;
+  box-shadow: #0c0c0c 0 0 20px;
+}
+
+.piece {
+  position: absolute;
+  overflow: hidden;
+  cursor:move;
+  z-index: 50;
+}
+.piece:hover { background-color: yellow; }
+
+.piece img {
+  width: 500px;
+  height: 500px; 
+}
+
+#puzzleContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+	
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  background-size: contain;
+	
+  width: 500px;
+  height: 500px;
+  margin-left: -250px;
+  margin-top: -250px;
+  
+  z-index: -1;
+}
+#puzzleContainer img, #puzzleContainer video, #puzzleContainer iframe {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  z-index: -1;
+  opacity: 0.25;
+}
+#puzzleContainer table { width: 500px; height: 500px; border-spacing: 0; }
+#puzzleContainer table td {
+  border: 1px dotted black;
+}
