@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="style.css" />
+	<title> Da Vinci Race 2014-2015 </title>
+	
+	<!-- jQuery libraries -->
+	<script src="Scripts/jquery-1.11.2.min.js"></script>
+	<script src="Scripts/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+	<link rel="stylesheet" href="Scripts/jquery-ui-1.11.4.custom/jquery-ui.css" />
+	
+	<!-- other scripts -->
+	<!-- <script src="Scripts/soundcloud.sdk.js"></script> -->
+	<script src="Scripts/jquery.textfill.min.js"></script>
+	<script src="Scripts/Options.js"></script>
+	<script src="Scripts/DVR button Press functions.js"></script>
+	<script src="Scripts/roundedRect.js"></script>
+</head>
+
+<body style="background:#f2f2f2;">
+
+<!-- Background -->
+<div id="BGFrenzy"></div>
+<canvas id="visualizer"></canvas>
+<canvas id="visualizerTransition"></canvas>
+
+<!-- Logo -->
+<img id="logo" src="Resources/DVRLogo.png"/>
+
+<!-- media player -->
+<audio id="Musique"></audio>
+<div id="DVRmediaPlayer">
+	<!-- complete media player -->
+	<div id="mediaPlayer">
+		<!-- Hide Arrow -->
+		<img id="mediaHide" src="Resources/hide arrow.png" style="position: absolute; top: 10px; width: 30px; left: 10px;"
+		onmouseover="$(this).attr('src', 'Resources/hide arrow hover.png')"
+		onmouseout="$(this).attr('src', 'Resources/hide arrow.png')"
+		/>
+		
+		<!-- Buttons -->
+		<div id="mediaButtons" style="display: inline-block">
+			<img class="Left" src="Resources/mediaPlayerControls/left.png" style="width: 40px;" onmousedown="mediaButtonPress('.Left')"/>
+			<img class="PlayPause" src="Resources/mediaPlayerControls/play.png" style="width: 40px;" onmousedown="mediaButtonPress('.PlayPause')"/>
+			<img class="Stop" src="Resources/mediaPlayerControls/stop.png" style="width: 40px;" onmousedown="mediaButtonPress('.Stop')"/>
+			<img class="Right" src="Resources/mediaPlayerControls/right.png" style="width: 40px;" onmousedown="mediaButtonPress('.Right')"/>
+			<img class="Repeat" src="Resources/mediaPlayerControls/infinity.png" style="width: 40px;" onclick="mediaButtonOn('.Repeat')"/>
+			<img class="Random" src="Resources/mediaPlayerControls/random.png" style="width: 40px;" onclick="mediaButtonOn('.Random')"/>
+		</div>
+		
+		<!-- Name, Volume and Time -->
+		<div class="mediaName"><span></span></div>
+		<div id="mediaVolume"></div>
+		<div id="mediaCurrentTime" style="position: absolute;">00:00</div>
+		<div id="mediaTotalTime" style="position: absolute;">00:00</div>
+		<div id="mediaTimelineOuter"><span id="mediaTimelineInner"></span></div>
+		
+		<!-- Options -->
+		<img id="mediaOptions" src="Resources/gear.png" style="position: absolute; top: 6px; width: 30px; right: 7px;"
+		onmouseover="$(this).attr('src', 'Resources/gear hover.png')"
+		onmouseout="$(this).attr('src', 'Resources/gear.png')"
+		/>
+	</div>
+	
+	<!-- Option Panel -->
+	<div id="mediaOptionPanel" style="color: #d9d9d9;">
+		<div id="tweenSongsName" style="font-size: 18px;" title="l'option 'Tween Songs' permet de changer le nombre minimum de musiques differente de la
+		première qui peuvent être jouer avant que la même musique puisse être jouer une deuxième fois.">Tween Songs<small><sup>(?)</sup></small>:</div>
+		<div id="tweenSongs"></div>
+		<div id="tweenSongsNumber" style="font-size: 18px;"></div>
+		
+		<div id="visualizerStyleName" style="font-size: 18px;">Type de visualiseur:</div>
+		<div id="visualizerStyle"></div>
+		<div id="visualizerStyleType" style="font-size: 18px;"></div>
+		
+		<div id="visualizerSensibilityName" style="font-size: 18px;">Sensibilité du visualiseur:</div>
+		<div id="visualizerSensibility"></div>
+		<div id="visualizerSensibilityNumber" style="font-size: 18px;"></div>
+		
+		<div id="visualizerFPSName" style="font-size: 18px;">FPS du visualiseur:</div>
+		<div id="visualizerFPS"></div>
+		<div id="visualizerFPSNumber" style="font-size: 18px;"></div>
+		
+		<div id="playbackRateName" style="font-size: 18px;">Vitesse de Lecture:</div>
+		<div id="playbackRate"></div>
+		<div id="playbackRateNumber" style="font-size: 18px;"></div>
+		
+		<div id="frequencyName" style="font-size: 18px;">Frequence:</div>
+		<div id="frequency"></div>
+		<div id="frequencyNumber" style="font-size: 18px;"></div>
+		
+		<div id="gainName" style="font-size: 18px;">Gain:</div>
+		<div id="gain"></div>
+		<div id="gainNumber" style="font-size: 18px;"></div>
+		
+		<div id="frenzyModeToggle" title="info sur le mode frenzy:
+		- le mode frenzy anime l'arrière plan du site
+		- il change la couleur du visualiseur
+		- il force le lecteur a jouer les musiques les plus rythmé
+		- il bloque la sensibilité du visualiseur a 0.6 maximum
+		- il active le mode aléatoire
+		
+		a utiliser pour les demi-finale et la finale">
+			<span>FRENZY!!!<small><sup>(?)</sup></small></span>
+			<div id="frenzyModeBottom"></div>
+		</div>
+		
+	</div>
+	
+	<!-- minimized media player -->
+	<div id="smallMediaPlayer">
+		<img id="mediaShow" src="Resources/show arrow.png" style="position: absolute; top: 12px; width: 30px; left: 5px;"
+		onmouseover="$(this).attr('src', 'Resources/show arrow hover.png')"
+		onmouseout="$(this).attr('src', 'Resources/show arrow.png')"
+		/>
+		
+		<div class="mediaName"><span></span></div>
+		<div id="mediaTime" style="position: absolute;">00:00/00:00</div>
+		<div id="mediaVolSmall"><span id="mediaVolInnerSmall"></span></div>
+		<div id="mediaTimelineSmall"><span id="mediaTimelineInnerSmall"></span></div>
+	</div>
+</div>
+
+<!-- main Menu -->
+<div id="mainMenu" style="background-color:#0c0c0c; float:right;">
+	<div class="chronometre" onmousedown="push('.chronometre');" ></div>
+	<div class="equipe" onmousedown="push('.equipe');" ></div>
+</div>
+
+
+<!-- fullscreen Button -->
+<img id="fullscreen" src="Resources/fullscreen.png"
+onmouseover="$(this).css('opacity', '1');"
+onmouseout="$(this).css('opacity', '0.5');">
+
+<!-- help Menu -->
+<div id="helpMenu">
+	<img id="help" src="Resources/Help.png"/>
+	<div id="helpTab">
+		<div class="helpMP" style="cursor: Help;"
+		title="- ⬅/➡: retour/avance rapide
+		- ⬆/⬇: musique suivante/precedente
+		- -/+: baisser/augmenter le volume
+		- touche espace: play/pause
+		- touche echap: stop
+		- double clic sur le curseur d'un slider
+		pour le replacer a sa position initial
+		
+		- touche <>: afficher/cacher le lecteur media"
+		>Raccourcis lecteur Media</div>
+		
+		<div class="helpMM" style="cursor: Help;"
+		title="- passer la souris sur la barre noir a droite
+		de l'écran pour afficher le menu principal
+		
+		- cliquer sur un des icônes du menu pour
+		afficher la page correspondante"
+		>Le menu principal</div>
+	</div>
+</div>
+
+
+<!------------------------------>
+<!--       Chronometre       --!>
+<!------------------------------>
+
+<div id="DVRChrono">
+	<!-- info Equipe 1 -->
+	<div id="equipe1">
+		<div id="nomEquipe1"><span>College 1</span></div>
+		<div id="timerEquipe1" style="position: absolute; right: 7%; top: 30%;">00.000</div>
+	</div>
+	<div id="statsEquipe1"></div>
+	
+	<!-- info Equipe 2 -->
+	<div id="equipe2">
+		<div id="nomEquipe2"><span>College 2</span></div>
+		<div id="timerEquipe2" style="position: absolute; left: 7%; top: 30%;">00.000</div>
+	</div>
+	<div id="statsEquipe2"></div>
+</div>
+
+
+<!------------------------------->
+<!--          Equipe          --!>
+<!------------------------------->
+
+<div id="DVREquipe">
+	<div id="teamList"></div>
+	
+	<div id="newTeam">
+		<div>Equipe a ajouter:</div>
+		<input id="teamName" placeholder="nom de l'equipe" >
+		
+		<div id="clearTeams"></div>
+	</div>
+</div>
+
+
+
+<!-------------------------------->
+<!--          Scripts          --!>
+<!-------------------------------->
+
+<script src="Scripts/DVR Teams.js"></script>
+<script src="Scripts/visualizer.js"></script>
+<script src="Scripts/DVR media player.js"></script>
+<!-- <script src="Scripts/customSong.js"></script> -->
+<script src="Scripts/frenzyMode.js"></script>
+<script src="Scripts/bodyScript.js"></script>
+</body>
+</html>

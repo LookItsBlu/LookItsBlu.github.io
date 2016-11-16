@@ -1,0 +1,214 @@
+====================
+       Test
+====================
+14 mars:
+
+Test N°2:
+J'ai retravailler les boutons de contrôle du lecteur audio, je suis en train de travailler sur l'ajout de la barre de temps avant de cacher les contrôles
+J'ai également rajouter des musiques (29 musiques au total)
+futur ajout:
+- page équipe
+- "mode frenzy"
+
+====================
+17 mars:
+
+Test N°5:
+Ajout du visualizer
+
+====================
+22 mars:
+
+Test N°6: 
++ modification au logo
++ menu option pour le lecteur média
++ nouvelle police
++ nouvelle musiques:
+Danny Baranowsky - Kirkhope
+Bean - Sixteen & dangerous
+Mike Forst - Katapult
+Sonic - Distant Star
+Ghost Kollective - Dummy (Radio Edit)
++ Ajout de raccourcis:
+< : cacher/afficher le lecteur
+espace : play/plause
+gauche/droite : avancer/reculer de 5 secondes
+haut/bas: musique suivante/précédente
+
+====================
+23 mars:
+
+Test N°7:
++ nouvelle animation pour la page de chronométrage
++ Ajout de l'option Tween Songs dans le menu "options" du lecteur média:
+qu'est-ce que "Tween Songs"?
+L'option Tween Songs permet de changer le nombre de musiques différente a jouer au minimum entre une musique
+en clair:
+Musique N°16 -> X musiques différentes -> Musique N°16
+et X peut être changer grace a l'option Tween Songs
+
+====================
+25 mars:
+
+Test N°9:
++ Le menu est maintenant caché par défaut et apparaît lors du passage de la souris
++ ajout d'une explication pour l'option Tween Songs lors du passage de la souris sur "Tween Songs"
++ la propriété "display" du menu option est maintenant mis a "none" après disparition
+
+Test N°10:
+= La barre de temps se met a jour plus rapidement (60 FPS)
+
+====================
+27 mars:
+
+Test N°12:
++ ajout du menu Aide en bas a droite de l'écran
++ réarrangement du code
+= changement de taille des div de la page de chronométrage pour améliorer la compatibilité avec les différentes résolutions
+= changement de la taille de la div "mediaShow"
+= changement de l'ID du menu principal: "options" -> "mainMenu"
+
+
+====================
+       Beta
+====================
+28 mars:
+
+Beta N°1:
+/!\ important /!\ + Ajout du menu équipe
+= les aides s'affichent sur le coté et non plus au dessus de la fenêtre
+
+====================
+29 mars:
+
+Beta N°3:
+= Menu Equipe refait pour pouvoir contenir plus de nom d'équipe
+
+
+====================
+   Purge Musicale
+====================
+31 mars:
+
+Purge musicale N°2:
+4 Musiques enlevé (35 -> 31 musiques au total; 162 Mo -> 134 Mo)
+Mr.Kitty - Gold
+Bean - Sixteen & dangerous
+Br1ght Pr1mate - Daft Punk Tron Legacy (1ère musique ajouté, R.I.P)
+Blackhole - Lagomorphic
+
+
+====================
+       Beta
+====================
+3 avril:
+
+Beta N°5:
++ ajout de la musique "Game Grumps Remix - Soar Onward"
++ les sliders peuvent être déplacer avec les flèches sans activer les raccourcis du lecteur
+- l'opacité de l’arrière-plan n'est plus animé lors de l'activation du mode frenzy
+= la valeur max du slider sensibilité du visualiseur passé de 100 a 10
+= le mode frenzy bloque dorénavant le slider sensibilité du visualiseur a 0.6 MAX
+= double clic sur le slider sensibilité du visualiseur lorsque le mode frenzy est activé le replace a la valeur 0.6
+
+====================
+4 avril:
+
+Beta N°6:
++ les couleurs du mode frenzy sont maintenant stocké dans la table "frenzyModeColors" dans "index.html" pour permettre la customisation
++ la couleur du visualiseur change selon la couleur de l'arrière-plan du mode frenzy, elle sont stocké dans la table "frenzyModeVisualizerColors" pour permettre la customisation
++ ajout du bouton "plein écran"
++ ajout de l'aide pour le mode frenzy
+
+====================
+6 avril:
+
+Beta N°7:
++ le nom des musiques est maintenant affiché quand le lecteur est caché
++ toutes les variables modifiables sont maintenant dans le fichier Options.js
++ la vitesse de la musique ne se réinitialise plus quand la musique est changé ou quand le mode frenzy est activé
++ le visualiseur a une transition quand le mode frenzy est activé la première fois
++ activer le mode frenzy lance une nouvelle musique de ce mode
++ ajout de musique dans la playlist du mode frenzy:
+MiddleIsland - Magnetic Shift
+Ghost Kollective - Dummy (Radio Edit)
+1 musique supprimé:
+Mike Forst - Katapult
+
+====================
+6 avril:
+
+Beta N°8/8 (Dernière beta):
++ Le visualiseur a une transition en même temps que l'arrière-plan
++ le temps de la musique est maintenant afficher quand le lecteur est caché
++ le nom de la musique affiché quand le lecteur est caché est centré
+
+
+====================
+    Pre-release
+====================
+7 avril:
+
+Vanilla Pre-release:
++++ Reformattage complet de la page html et du css
++++ nouveau fichier js: frenzyMode.js et visualizer.js
+++ Ajout du slider Gain pour augmenter le son jusqu’à 500%
++ l'option tweenSongs s'ajuste quand le mode frenzy est activé
++ correction d'un bug qui cause le visualiseur de transition a rester a l'écran
+
+====================
+8 avril:
+
+Pre-release N°2:
+
+/!\ important /!\ le site marche dorénavant sur firefox, fix probable du problème avec la raspberry pi (la moitié des scripts du site ne fonctionnait pas)
+
+====================
+13 avril:
+
+Pre-release N°2.5:
+- le fichier name.txt a été supprimer
++ la variable songName a été déplacer dans les options et doit être modifier manuellement
++ la variable songName se complète automatiquement
+
+====================
+15 avril:
+
+Pre-release N°3:
+Musique ajouté:
+- Wolfgun - The Gift
+- Kubbi - Ember
+
+====================
+18 avril:
+
+Pre-release N°4: (Amelioration des performances)
+++ les lignes pour changer la taille du nom des musiques et des équipes ne tournent plus a l'aide de window.requestAnimationFrame (boost de performance...?)
+++ la timeline ne se met plus a jour a l'aide de window.requestAnimationFrame (boost de performance...?)
++ ajout d'un indicateur du niveau du volume sur le lecteur minimisé
+
+====================
+19 avril:
+
+Pre-release N°5: (bug mode frenzy, random & tween songs)
++ correction d'un bug ou toutes les musiques pouvait être joué en mode frenzy lorsque le mode random etait allumé en même temps
++ correction d'un bug ou tween songs ne se positionnait pas a la bonne valeur quand:
+- random est activé, puis frenzy, puis random est désactiver
+- random est activé, puis frenzy est activé et désactiver
++ correction d'un bug de tween songs qui prennait en compte les musiques aléatoire qui ne passait pas en mode frenzy
+
+
+====================
+  Show must go on
+====================
+22 avril:
+
+Show must go on N°1: (grosse mise a jour)
+++ ajout du temps actuel et du temps total de la musique (beta)
++ la taille du nom des équipes est changé que lorsque le menu chronométrage est affiché
++ les barres du visualiseur sont plus petite
++ les variables bars, bar_x_spaces, bar_width et bar_height_sensibility sont maintenant dans le fichier option.js
++ le nom des musiques peut-être sélectionné
++ le curseur est modifié lors du passage sur un slider ou un bouton
++ divers modification du fichier css (nouveau nom: DaVinciRace.css -> style.css)
++ autre chose que j'ai oublier
