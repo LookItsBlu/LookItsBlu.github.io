@@ -1,0 +1,17 @@
+.hecomes {
+  position: absolute;
+  width: 930px;
+  height: 70px;
+  top: 50%;
+  left: 50%;
+  margin-left: -465px;
+  margin-top: -35px;
+  font-size:60px;
+  text-align: center;
+  color: rgb(125, 0, 0);
+  text-decoration: none;
+  transition: all ease-in-out 1s;
+}
+.hecomes:hover {
+  color: rgb(75, 0, 0);
+}
