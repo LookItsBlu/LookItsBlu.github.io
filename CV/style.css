@@ -126,9 +126,18 @@ p { text-align: justify; font-size: 18px; width: 50%; margin: 0 auto 15px auto; 
     display: table-cell;
 	overflow: hidden;
 }
-.projectsLinks:before {
+.projectsLinks>a {
+	display: block;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+.projectsLinks>a:after {
 	content: '';
 	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(45deg, rgba(20,20,20,0.75), rgba(20,20,20,0) 75%);
@@ -139,6 +148,7 @@ p { text-align: justify; font-size: 18px; width: 50%; margin: 0 auto 15px auto; 
 	position: absolute;
 	left: 0;
 	bottom: 0;
+	z-index: 999;
 	margin: 0 0 15px 15px;
 	width: 50%;
 	font-size: 2.5vh;
@@ -147,20 +157,20 @@ p { text-align: justify; font-size: 18px; width: 50%; margin: 0 auto 15px auto; 
 	opacity: 0;
 	transition: opacity 0.15s linear;
 }
-.projectsLinks:hover:before { opacity: 1; }
-.projectsLinks:hover span { opacity: 1; }
+.projectsLinks:hover a:after { opacity: 1; }
+.projectsLinks:hover a>span { opacity: 1; }
 
 /* PROJECT IMAGES */
-.DVR { background: url('img/picture.jpg') no-repeat; }
-.Puzzle { background: url('img/picture.jpg') no-repeat; }
-.ListeNiveau { background: url('img/picture.jpg') no-repeat; }
-.CreateurNiveau { background: url('img/picture.jpg') no-repeat; }
-.XML { background: url('img/picture.jpg') no-repeat; }
-.Wiki { background: url('img/picture.jpg') no-repeat; }
-.Bug { background: url('img/picture.jpg') no-repeat; }
-.Seprote { background: url('img/picture.jpg') no-repeat; }
-.ECV { background: url('img/picture.jpg') no-repeat; }
+.DVR { background: url('img/DVR.png') no-repeat; }
+.Puzzle { background: url('img/puzzle.png') no-repeat; }
+.ListeNiveau { background: url('img/levelList.png') no-repeat; }
+.CreateurNiveau { background: url('img/editor.png') no-repeat; }
+.XML { background: url('img/SD.png') no-repeat; }
+.Wiki { background: url('img/wiik.png') no-repeat; }
+/*.Bug { background: url('img/bug.png') no-repeat; }*/
+/*.Seprote { background: url('img/seprote.png') no-repeat; }*/
+.ECV { background: url('img/CV.png') no-repeat; }
 
 
-.projectsLinks { background-size: 100%; transition: background-size 0.5s; }
-.projectsLinks:hover { background-size: 110%; }
+.image { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.5s; }
+.projectsLinks:hover .image { transform:scale(1.1) }
