@@ -1,0 +1,10 @@
+#trinkets { width: 50vw; margin: 50px 25vw 50px 25vw; border-collapse: collapse; color: #333; }
+
+#trinkets tr, #trinkets th, #trinkets td { border: 1px solid #676767; }
+#trinkets th { background-color: #ccc; font-weight: normal; }
+#trinkets tr:nth-child(odd) { background-color: #eee; }
+#trinkets tr:nth-child(even) { background-color: #fff; }
+
+#trinkets tr td { padding: 5px 10px; text-align: center; }
+#trinkets tr td:nth-child(1) { padding-right: 10px; }
+#trinkets tr td:nth-child(3) { padding: 10px 20px; text-align: justify; }

@@ -1,0 +1,236 @@
+#personnages  {
+    position: fixed;
+    width: 20%;
+    margin-top: 20px;
+    margin-left: 5%;
+    border: 1px solid #666;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+#personnages ul { list-style-type: none; max-height: 30vw; overflow-x: hidden; overflow-y: auto;}
+#personnages ul li { padding: 5px 0; font-size: 20px; text-align: center; cursor: pointer; }
+#personnages ul li img { width: 10%; image-rendering: crisp-edges; }
+
+#personnages ul li:nth-child(odd) { background-color: #ddd; }
+#personnages ul li:nth-child(even) { background-color: #bbb; }
+
+#charInfo {
+    width: 50vw;
+    margin-left: 33%;
+    background-color: #ddd;
+    border: 1px solid #666;
+    border-top: none;
+}
+
+#name {
+    display: block;
+    
+    width: 32vw;
+    height: 4vw;
+    margin: 0 auto 20px auto;
+    
+    background-image: url('../ressources/UI/NameBG.png');
+    background-size: 100%;
+    
+    font-family: 'pixel';
+    font-size: 1.5vw;
+    font-smooth: never;
+    -webkit-font-smoothing : none;
+    color: #fff;
+    text-shadow:
+      #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+      #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+      #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+      #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+    text-align: center;
+    line-height: 4.75vw;
+}
+
+.general img { image-rendering: pixelated; }
+#charInfo .general { position: absolute; width: inherit; }
+
+#charInfo .background {
+    position: relative;
+    width: 75%;
+    margin: 0 auto;
+    display: block;
+}
+
+#char-img { position: inherit; width: inherit; }
+
+.post-it {
+    position: inherit;
+    top: -25vw;
+    left: 13.75vw;
+    width: 15%;
+}
+
+#char-img .char {
+    position: inherit;
+    top: -23.5vw;
+    left: 15.9vw;
+    width: 3.25vw;
+    image-rendering: initial;
+}
+
+
+#stats {
+    position: inherit;
+    top: 0;
+    left: 0;
+    width: 15%;
+}
+
+#stats>img {
+    width: 60%;
+    position: relative;
+    display: block;
+}
+
+
+#stats .speed { top: 10.2vw; left: 19.17vw; }
+#stats .range { top: 8vw; left: 28.34vw; }
+#stats .tears { top: 8.4vw; left: 19.17vw; }
+#stats .tearspeed { top: 6.2vw; left: 28.34vw; }
+#stats .attack { top: 6.5vw; left: 19.17vw; }
+#stats .luck { top: 4.23vw; left: 28.34vw; }
+
+
+#start_items { position: inherit; top: 3vw; left: 22vw; }
+
+#start_items .items {
+    position: relative;
+    display: inline-block;
+    
+    width: 2.1vw;
+    height: 2.1vw;
+    margin-left: -0.2vw;
+    
+    background-image: url('../ressources/UI/small items.png');
+    background-size: 40vw;
+    image-rendering: pixelated;
+}
+
+
+#health { position: inherit; top: 5.5vw; left: 22vw; }
+#health .heart {
+    position: relative;
+    display: inline-block;
+    
+    width: 1.78vw;
+    height: 1.79vw;
+    margin-left: -0.25vw;
+    
+    background-image: url('../ressources/UI/ui_hearts.png');
+    background-size: 1.75vw;
+    image-rendering: pixelated;
+}
+.heart.red { background-position: 0 0; }
+.heart.soul { background-position: 0 -1.78vw; }
+.heart.evil { background-position: 0 -3.56vw; }
+.heart.coin { background-position: 0 -5.35vw; }
+.heart.eternal { background-position: 0 5.5vw; }
+.heart.unknown { background-position: 0 1.9vw; }
+
+
+#pickups { position: inherit; top: 7.5vw; left: 19.5vw; }
+#pickups .pickup {
+    position: relative;
+    display: inline-block;
+    
+    width: 3.85vw;
+    height: 1.78vw;
+    margin-left: 1vw;
+    font-size: 1.25vw;
+    
+    font-family: 'pixel';
+    font-smooth: never;
+    -webkit-font-smoothing : none;
+    color: #fff;
+    text-shadow:
+      #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+      #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+      #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+      #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+}
+#pickups .pickup:before {
+    width: 1.78vw;
+    height: 1.78vw;
+    padding-left: 0.25vw;
+    display: inline-block;
+    content: '';
+    background-image: url('../ressources/UI/hudpickups.png');
+    background-size: 5.5vw;
+    image-rendering: pixelated;
+}
+.coins:before { background-position: 0 0; }
+.keys:before { background-position: -1.65vw 0; }
+.bombs:before { background-position: 0 -1.65vw; }
+
+
+.trinket {
+    position: inherit;
+    top: 3.25vw;
+    left: 30vw;
+    
+    width: 1.78vw;
+    height: 1.78vw;
+    
+    image-rendering: pixelated;
+}
+
+
+.cardpill {
+    position: inherit;
+    top: 5.5vw;
+    left: 30.25vw;
+    
+    width: 1.25vw;
+    height: 1.5vw;
+    
+    background-size: 7.5vw;
+    image-rendering: pixelated;
+}
+
+
+
+#unlocks { position: inherit; margin-top: 30vw; width: 100%; text-align: center; }
+#unlocks div { display: inline-block; margin: 0 20px 5px 0; }
+#unlocks>div { border: 1px solid #676767; }
+#unlocks div img { width: 3vw; }
+.icon {
+    position: relative;
+    display: inline-block;
+    height: 3vw;
+    width: 2.65vw;
+    background-image: url('../ressources/UI/completion.png');
+    background-size: 25vw;
+    image-rendering: pixelated;
+}
+.heart { background-position: -10.8vw 0; }
+.bossRush { background-position: -13.5vw 0; }
+.cathedral { background-position: -5.45vw 0; }
+.sheol { background-position: -7.8vw 0; }
+.theChest { background-position: 0 0; }
+.darkRoom { background-position: -2.75vw 0; }
+.megaSatan { background-position: -19vw 0; }
+.ultraGreed { background-position: -22vw -1.25vw; }
+.hush { background-position: -16.25vw 0; }
+
+.completeHard { width: 15%!important; margin-right: 5px!important; }
+
+.complete { margin: 5% 0 0 0!important; width: 100%; border: none!important; }
+
+.reward { font-family: 'Upheaval pro'; font-size: 1.15vw; margin: 0 15px 0 3px; }
+
+
+#description {
+    display: block;
+    width: 85%;
+    margin: 5vw auto 30px auto;
+    text-align: justify;
+    font-size: 1vw;
+}
+#description div { display: none; }

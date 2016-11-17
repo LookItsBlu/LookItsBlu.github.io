@@ -1,0 +1,11 @@
+#monstres { width: 50vw; margin: 50px 25vw 50px 25vw; display: block; border-collapse: collapse; color: #333; }
+
+#monstres tr, #monstres th, #monstres td { border: 1px solid #676767; }
+#monstres th { background-color: #ccc; font-weight: normal; }
+#monstres tr:nth-child(odd) { background-color: #eee; }
+#monstres tr:nth-child(even) { background-color: #fff; }
+
+#monstres tr td { padding: 5px 10px; text-align: center; }
+#monstres tr td:nth-child(1) { padding-right: 10px; }
+#monstres tr td:nth-child(3) { padding: 10px 20px; text-align: justify; }
+#monstres tr td:nth-child(4) { padding-right: 10px; }

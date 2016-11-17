@@ -1,0 +1,12 @@
+#recherche { width: 49.7vw; height: 2vw; font-size: 1.5vw; margin: 50px auto 0 auto; display: block; color: #333; }
+#items { width: 50vw; margin: 0 auto; display: table; border-collapse: collapse; color: #333; }
+
+#items tr, #items th, #items td { border: 1px solid #676767; }
+#items th { background-color: #ccc; font-weight: normal; }
+#items tr:nth-child(odd) { background-color: #eee; }
+#items tr:nth-child(even) { background-color: #fff; }
+
+#items tr td { padding: 5px 10px; text-align: center; }
+#items tr td:nth-child(1) { padding-right: 10px; }
+#items tr td:nth-child(3) { padding: 10px 20px; text-align: justify; }
+#items tr td:nth-child(4) { padding-right: 10px; }

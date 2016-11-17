@@ -1,0 +1,30 @@
+#menu {
+    width: 75%;
+    height: auto;
+    margin: 50px auto;
+    background-color: #eee;
+    box-shadow: #000 0 0 50px -20px;
+}
+#icons { width: 100%; text-align: center; }
+#icons a { text-decoration: none; }
+#icons img {
+    margin: 30px 20px 0 20px;
+    vertical-align: middle;
+    image-rendering: pixelated;
+}
+#icons img:hover { -webkit-filter: brightness(115%); }
+#icons img:active { -webkit-filter: brightness(85%); }
+
+#name {
+    width: 100%; height: 60px;
+    margin: 25px auto;
+    background-color: #ccc;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px 0;
+    text-align: center;
+    font-size: 26px;
+}
+#name span { font-family: 'upheaval pro'; line-height: 60px; display: none; }
+
+#desc { text-align: center; background-color: #eee; box-shadow: #000 0 0 50px -20px; }
+#desc .in { padding-bottom: 15px; }
+#desc .in p { width: 80%; margin: 15px auto 5px auto; text-align: center; line-height: 20px; }

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8"></meta>
+        <title>Wiik | Items</title>
+        
+        <link rel="stylesheet" type="text/CSS" href="styles/general.css"></link>
+        <link rel="stylesheet" type="text/CSS" href="styles/topMenu.css"></link>
+        
+        <link rel="stylesheet" type="text/CSS" href="styles/monstres.css"></link>
+        
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    </head>
+    <body>
+		<div id="topMenu">
+			<div class="openClose">
+				<img src="ressources/home.png"/>
+			</div>
+			
+			<div id="categories">
+				<span>Personnages</span>
+				<span>Monstres</span>
+				<span>Bosses</span>
+				<span>Objets</span>
+				<span>Chapitres</span>
+				<span>Trinkets</span>
+			</div>
+			
+			<div id="icons">
+				<a href="personnages.html"> <img class="personnages" src="ressources/menu/personnages.png"/> </a>
+				<a href="monstres.html"> <img class="monstres" src="ressources/menu/monstres.png"/> </a>
+				<a href="boss.html"> <img class="bosses" src="ressources/menu/bosses.png"/> </a>
+				<a href="objets.html"> <img class="objets" src="ressources/menu/objets.png"/> </a>
+				<a href="chapitre.html"> <img class="chapitre" src="ressources/menu/chapitres.png"/> </a>
+				<a href="trinkets.html"> <img class="trinkets" src="ressources/menu/trinkets.png"/> </a>
+			</div>
+		</div>
+        
+		<div id="header">
+			<a class="logo" href="index.html"><div></div></a>
+		</div>
+		
+		<h1>Wiki Binding of Isaac: Rebirth</h1>
+        
+        <table id="monstres">
+            <tr>
+                <th>Icone</th>
+                <th>Nom</th> 
+                <th>Description</th>
+            </tr>
+        </table>
+        
+		<div id="footer">
+			<nav>
+	         <ul>
+				<li><a onclick="window.alert('Créer par Wiik Team\n\nWiik Team:\n- Lenglet Anthony\n- Corentin Caron')">A propos</a></li>
+				<li><a onclick="window.alert('Nous contacter:\nwiik.IUT@gmail.com')">Contact</a></li>
+		     </ul>
+		    </nav>
+		    <span>©2016 Wiik team</span>
+		</div>
+        
+        <script src="scripts/topMenu.js"></script>
+        <script src="scripts/monstres.js"></script>
+        <script>
+            $(document).ready(function(){
+                for(var i=1; i<=132; i++) {
+                    $("#monstres").append("<tr><td></td><td></td><td></td></tr>");
+                    $("#monstres tr:nth-child("+(i+1)+") td:first-child").append("<img src='ressources/Monstres/"+i+".png'/>");
+                    $("#monstres tr:nth-child("+(i+1)+") td:nth-child(2)").append(Name[i-1]);
+                    $("#monstres tr:nth-child("+(i+1)+") td:nth-child(3)").append(description[i-1]);
+                }
+            });
+        </script>
+    </body>
+</html>

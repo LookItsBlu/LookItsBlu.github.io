@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"></meta>
+		<title>Wiik | Chapitre</title>
+		
+		<link rel="stylesheet" type="text/CSS" href="styles/general.css"></link>
+		<link rel="stylesheet" type="text/CSS" href="styles/topMenu.css"></link>
+		
+		<link rel="stylesheet" type="text/CSS" href="styles/chapitre.css"></link>
+		
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	</head>
+	
+	<body>
+		<div id="topMenu">
+			<div class="openClose">
+				<img src="ressources/home.png"/>
+			</div>
+			
+			<div id="categories">
+				<span>Personnages</span>
+				<span>Monstres</span>
+				<span>Bosses</span>
+				<span>Objets</span>
+				<span>Chapitres</span>
+				<span>Trinkets</span>
+			</div>
+			
+			<div id="icons">
+				<a href="personnages.html"> <img class="personnages" src="ressources/menu/personnages.png"/> </a>
+				<a href="monstres.html"> <img class="monstres" src="ressources/menu/monstres.png"/> </a>
+				<a href="boss.html"> <img class="bosses" src="ressources/menu/bosses.png"/> </a>
+				<a href="objets.html"> <img class="objets" src="ressources/menu/objets.png"/> </a>
+				<a href="chapitre.html"> <img class="chapitre" src="ressources/menu/chapitres.png"/> </a>
+				<a href="trinkets.html"> <img class="trinkets" src="ressources/menu/trinkets.png"/> </a>
+			</div>
+		</div>
+		
+		<div id="header">
+			<a class="logo" href="index.html"><div></div></a>
+		</div>
+		
+		<div id="content">
+		    <h1>Wiki Binding of Isaac: Rebirth</h1>
+		    
+		    <img id="transitionMap" src="ressources/Stages Icons/transition.png" usemap="#transitionMap"/>
+		 
+		    <map name="transitionMap">
+			  <area shape="rect" coords="0,10,51,45" onclick="updateChapter('cellar'); return false;" alt="cellar">
+			  <area shape="rect" coords="0,56,51,91" onclick="updateChapter('basement'); return false;" alt="basement">
+			  <area shape="rect" coords="0,102,51,137" onclick="updateChapter('burning_basement'); return false;" alt="burning basement">
+			  
+			  <area shape="rect" coords="82,10,133,45" onclick="updateChapter('catacombs'); return false;" alt="catacombs">
+			  <area shape="rect" coords="82,56,133,91" onclick="updateChapter('caves'); return false;" alt="caves">
+			  <area shape="rect" coords="82,102,133,137" onclick="updateChapter('flooded_caves'); return false;" alt="flooded caves">
+			  
+			  <area shape="rect" coords="164,10,215,45" onclick="updateChapter('necropolis'); return false;" alt="necropolis">
+			  <area shape="rect" coords="164,56,215,91" onclick="updateChapter('depths'); return false;" alt="depths">
+			  <area shape="rect" coords="164,102,215,137" onclick="updateChapter('dank_depths'); return false;" alt="dank depths">
+			  
+			  <area shape="rect" coords="246,10,297,45" onclick="updateChapter('utero'); return false;" alt="utero">
+			  <area shape="rect" coords="246,56,297,91" onclick="updateChapter('womb'); return false;" alt="womb">
+			  <area shape="rect" coords="246,10,297,137" onclick="updateChapter('scarred_womb'); return false;" alt="scarred womb">
+			  
+			  
+			  <area shape="rect" coords="348,0,399,35" onclick="updateChapter('sheol'); return false;" alt="sheol">
+			  <area shape="rect" coords="430,0,481,35" onclick="updateChapter('dark_room'); return false;" alt="dark room">
+			  
+			  <area shape="rect" coords="348,56,399,91" onclick="updateChapter('cathedral'); return false;" alt="cathedral">
+			  <area shape="rect" coords="430,56,481,91" onclick="updateChapter('the_chest'); return false;" alt="the chest">
+			  
+			  <area shape="rect" coords="348,112,399,147" onclick="updateChapter('blue_womb'); return false;" alt="blue womb">
+			  
+			  <area shape="rect" coords="562,54,613,97" onclick="updateChapter('ultra_greed'); return false;" alt="ultra greed">
+			</map>
+			
+			
+			<div id="chapterInfo">
+				<div class="name"></div>
+				
+				<img class="chapterImg" src="ressources/Stages/basement.png" width="50%"/>
+				
+				<div id="description">
+					<div class="cellar">
+						<p>The Cellar est l’un des environnements du Chapitre 1.</p>
+						<p>Il est débloqué après avoir vaincu tous les boss dans The Basement.</p>
+					</div>
+					<div class="basement">
+						<p>The Basement est un des environnements du Chapitre 1.</p>
+						<p>Disponible de base, il est considéré comme le plus facile du jeu.</p>
+					</div>
+					<div class="burning_basement">
+						<p>The Burning Basement  est un des environnements du Chapitre 1 disponible dans le DLC 'afterbirth'.</p>
+						<p>Disponible de base, il a pour thème le feu</p>
+						<p>la plupart des enemies du niveau sont enflamé, et laissent le sol en feu quand il sont tué.</p>
+					</div>
+					
+					
+					<div class="catacombs">
+						<p>The Catacombs la version alternative de The Caves.</p>
+						<p>The Catacombs est débloqué quand chaque boss de The Caves a été vaincu.</p>
+					</div>
+					<div class="caves">
+						<p>The Caves est le 2ème chapitre dans Rebirth.</p>
+						<p>Si tous les boss dans The Caves sont vaincu, The Catacombs sera dévérouillé.</p>
+					</div>
+					<div class="flooded_caves">
+						<p>The Flooded Caves est le 2ème chapitre disponible dans le DLC 'afterbirth'.</p>
+						<p>Disponible de base, il a pour thème l'eau.</p>
+						<p>il est consideré comme la version de The Caves la plus difficile.</p>
+					</div>
+					
+					
+					<div class="necropolis">
+						<p>The Necropolis est la version alternative du chapitre The Depths.</p>
+						<p>C’est un environnement sombre infesté d’insectes.</p>
+						<p>Pour débloquer Necropolis, tous les Boss de The Depths doivent être vaincu au moins une fois.</p>
+						<p>Le boss de Necropolis II est toujours Mom.</p>
+					</div>
+					<div class="depths">
+						<p>The Depths est un des environnements du Chapitre 3.</p>
+						<p>Le thème de ce chapitre est l’obscurité et les crânes.</p>
+						<p>Une fois tous les boss vaincus dans The Depths, Necropolis sera disponible.</p>
+						<p>Le boss dans The Depths II est toujours Mom.</p>
+					</div>
+					<div class="dank_depths">
+						<p>The Dank Depths est un des environnements du Chapitre 3 disponible dans le DLC 'afterbirth'.</p>
+						<p>Le thème de ce chapitre est l’obscurité</p>
+						<p>Il est disponible de base et est aussi difficile que The Necropolis</p>
+					</div>
+					
+					
+					<div class="utero">
+						<p>Utero est une version alternative de The Womb.</p>
+						<p>Contrairement aux autres étages alternatifs, Utero n’a pas besoin d’être débloqué.</p>
+						<p>Comme pour The Womb, tout les dégâts subis font un coeur en moins.</p>
+					</div>
+					<div class="womb">
+						<p>The Womb est le 4ème chapitre du jeu, dévérouillé après avoir vaincu Mom.</p>
+						<p>A partir de the Womb et au delà, tout dégât subis sera de 1 coeur entier.</p>
+						<p>Tout comme The Depths/Necropolis, le boss du 2ème étage de the Womb à un boss prédéfini:
+						Mom's Heart, puis It Lives après avoir vaincu mom’s heart 11 fois.</p>
+						<p>La version alternative de The Womb, Utero, n’a pas besoin d’être dévérouillé contrairement aux autres.</p>
+					</div>
+					<div class="scarred_womb">
+						<p>The Scarred Womb est une autre version alternative de The Womb disponible dans le DLC 'afterbirth'.</p>
+						<p>The Scarred Womb est graphkquement different de The Womb et The Utero, mais il est tout aussi compliqué.</p>
+						<p>le boss du 2ème étage de The Scarred Womb à un boss prédéfini: Mom's Heart, puis It Lives après avoir vaincu mom’s heart 11 fois.</p>
+						<p>Comme pour Les autre Version de ce chapitre, tout les dégâts subis font un coeur en moins.</p>
+					</div>
+					
+					
+					<div class="sheol">
+						<p>Sheol est l’un des deux étages à déverrouiller après The Womb/Utero, l’autre étant la Cathedral.</p>
+						<p>Après avoir vaincu Mom's Heart, une salle du diable peut apparaître avec à l'intérieur une trappe menant au Sheol.</p>
+						<p>Débloquer et vaincre It Lives fera toujours apparaître une trappe menant à Sheol et un halo de lumière menant à la Cathedral.</p>
+						<p>Sheol ne possède qu’un étage, et le boss est toujours Satan.</p>
+					</div>
+					<div class="dark_room">
+						<p>The Dark Room est l’un des deux derniers niveaux, l’autre étant The Chest.</p>
+						<p>The Dark Room est débloquée après avoir vaincu Satan 5 fois, après quoi, le joueur peut y accéder en touchant le coffre qui apparait après avoir battue Satan en portant le The Negative dans votre inventaire.</p>
+						<p>Après avoir fini ce niveau ou the chest pour la 1ere fois, la salle de départ de the chest ou de dark room contiendra une grande porte dorée, qui peut être ouverte en ayant Key Piece 1 et Key Piece 2 ou Dad's Key, vous menant au boss final.</p>
+						<p>La salle de départ de cet étage contient 4 coffres rouges.</p>
+						<p>Comme Sheol, la Dark Room ne contient qu’un étage.</p>
+						<p>Les salles dans la Dark Room principalement remplies de boss et de mini-boss.</p>
+						<p>Le boss de cet étage est toujours The Lamb.</p>
+					</div>
+					
+					
+					<div class="cathedral">
+						<p>The Cathedral est un des deux étage à débloquer après The Womb/Utero, l’autre étant Sheol.</p>
+						<p>Après avoir vaincu Mom's Heart, une salle de l’ange peut apparaître et contenir à l'intérieur un halo de lumière vous menant à la Cathedral.</p>
+						<p>Débloquer et vaincre It Lives fera toujours apparaitre un halo de lumière menant à la Cathedral, ainsi qu’une trappe menant au Sheol.</p>
+						<p>The Cathedral ne possède qu’un étage, et le boss est toujours Isaac.</p>
+					</div>
+					<div class="the_chest">
+						<p>The Chest est un des deux niveaux finaux de The Binding of Isaac, l’autre étant la Dark Room.</p>
+						<p>The Chest ne peut être atteinte que de 3 manières:</p>
+						<ol>
+							<li>Toucher le coffre après avoir battue Isaac en ayant récupéré le The Polaroid (qui est toujours laché par Mom, une fois que vous avez vaincu Isaac 5 fois).</li>
+							<li>En utilisant une Telepills ou tout autre objet vous téléportant dans la cathedral, vous avez une chance d’être envoyé dans la salle I Am Error.</li>
+							<li>Trouver un Black Market dans the Cathedral et aller dans le halo de lumière.</li>
+						</ol>
+						<p>La salle de départ dans The Chest contient 4 Coffres Dorés.</p>
+						<p>Après avoir finit la dark room ou the chest pour la 1ere fois, la salle de départ de the chest ou de dark room contiendra une grande porte dorée, qui peut être ouverte en ayant Key Piece 1 et Key Piece 2 ou Dad's Key, vous menant au boss final.</p>
+						<p>Comme la Cathedral , The Chest ne possède qu’un étage.</p>
+						<p>Les salles sont principalement remplis de boss et mini-boss.</p>
+						<p>Le boss de l’étage est toujours ???.</p>
+					</div>
+					
+					
+					<div class="blue_womb">
+						<p>Blue Womb, tout comme Bosh Rush est un étage accesible uniquement quand le joueur arrve a battre Mom's Heart/It Lives en moins de 30 minutes.</p>
+						<p>Ce niveau contient un salle principale avec 4 coffre en or (similaire a la salle de départ de The Chest), 2 Item Rooms, 1 Magasin et une salle avec Hush, le boss du niveau.</p>
+						<p>Contrairement a The Chest, les 4 coffres en or ne donne pas toujours des objets.</p>
+						<p>Le boss du niveau, Hush, est le boss finaux le plus dur du jeu, il est donc conseiller d'avoir beaucoup de vie avant de l'affronter.</p>
+					</div>
+					
+					
+					<div class="ultra_greed">
+						<p>Ultra Greed est non seulement le boss final mais également le nom du dernier chapitre du mode greed.</p>
+						<p>ce chapitre est constitué de la salle de départ, une première salle de boss contenant soit monstro soit plusieurs super greed et une deuxième salle de boss, plus grande, contenant le boss Ultra Greed.</p>
+						<p>les murs du chapitre sont identique a ceux des magasins.</p>
+						<p>la salle contenant Ultra Greed contient 6 portes qui s'ouvre occasionellement pour faire entrer des vagues d'enemies.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="footer">
+			<nav>
+	         <ul>
+				<li><a onclick="window.alert('Créer par Wiik Team\n\nWiik Team:\n- Lenglet Anthony\n- Corentin Caron')">A propos</a></li>
+				<li><a onclick="window.alert('Nous contacter:\nwiik.IUT@gmail.com')">Contact</a></li>
+		     </ul>
+		    </nav>
+		    <span>©2016 Wiik team</span>
+		</div>
+		
+		<script src="scripts/topMenu.js"></script>
+		<script src="scripts/chapitre.js"></script>
+	</body>
+</html>
