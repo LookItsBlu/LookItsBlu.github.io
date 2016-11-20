@@ -9,7 +9,7 @@ body {
   text-align: center;
 }
 
-h2 { font-size: 25px; color: #777; margin: 30px 0; }
+h2 { font-size: 25px; color: #482728; margin: 30px 0; }
 h3 { font-size: 22px; font-weight: normal; margin: 20px 0; }
 
 p { text-align: justify; font-size: 18px; width: 50%; margin: 0 auto 15px auto; }
@@ -106,6 +106,134 @@ p { text-align: justify; font-size: 18px; width: 50%; margin: 0 auto 15px auto; 
 #interets { background-color: #A48989; }
 
 
+/********************/
+/* PARCOURSSCOLAIRE */
+/********************/
+
+#timeline:before {
+  content: attr(data-firstDate);
+  position: absolute;
+  left: 0;
+  top: 40%;
+  font-size: 15px;
+  color: #b7a3a3;
+  font-weight: bold;
+}
+#timeline:after {
+  content: attr(data-lastDate);
+  position: absolute;
+  right: 0;
+  top: 40%;
+  font-size: 15px;
+  color: #b7a3a3;
+  font-weight: bold;
+}
+#timeline {
+  position: relative;
+  display: table;
+  width: 70%;
+  height: 50px;
+  margin: 30vh auto 0 auto;
+}
+
+.pinsTop, .pinsBottom {
+  position: relative;
+  display: table;
+  width: calc(100% - 2px);
+  height: 40px;
+  text-align: left;
+}
+.pin {
+  display: inline-block;
+  position: absolute;
+  height: inherit;
+  min-width: 140px;
+  width: 7vw;
+  text-align: left;
+}
+.pin span {
+  display: inline-block;
+  height: inherit;
+  position: absolute;
+  overflow: hidden;
+  font-size: 14px;
+}
+.pinsTop span { bottom: 5px; }
+.pinsBottom span { top: 5px; }
+
+.pin:before {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: inherit;
+  margin-right: 5px;
+  background-color: #eee;
+}
+.pinsTop .pin:after {
+  content: attr(data-date);
+  position: absolute;
+  top: -30px;
+  border-bottom: 1px dotted #482728;
+}
+.pinsBottom .pin:after {
+  content: attr(data-date);
+  position: absolute;
+  bottom: -30px;
+  border-top: 1px dotted #482728;
+}
+
+.timelineBar {
+  display: table-row;
+  width: 100%;
+  height: 10px;
+  font-size: 0;
+  background-color: #eee;
+}
+
+/************************/
+/* END PARCOURSSCOLAIRE */
+/************************/
+
+/**************/
+/* FORMATIONS */
+/**************/
+
+#formationTable, #formationTable tr {
+  width: 40%;
+  height: 25px;
+  border-collapse: collapse;
+  margin: 10vh auto 0 auto;
+}
+
+#formationTable th {
+  border-bottom: 1px dotted #482728;
+  font-size: 20px;
+  text-align: left;
+  color: #482728;
+}
+#formationTable tr>*:first-child {
+  width: 25%;
+}
+#formationTable td:first-child {
+  text-align: center;
+}
+
+.formationBar {
+  background-color: #eee;
+  height: 19px;
+  line-height: 19px;
+  font-size: 28.5px;
+  color: #cbbdbd;
+}
+
+/******************/
+/* END FORMATIONS */
+/******************/
+
+/***********/
+/* PROJETS */
+/***********/
+
 #projectsList {
 	display: table;
     border-spacing: 10px;
@@ -148,7 +276,7 @@ p { text-align: justify; font-size: 18px; width: 50%; margin: 0 auto 15px auto; 
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	z-index: 999;
+	z-index: 2;
 	margin: 0 0 15px 15px;
 	width: 50%;
 	font-size: 2.5vh;
@@ -174,3 +302,54 @@ p { text-align: justify; font-size: 18px; width: 50%; margin: 0 auto 15px auto; 
 
 .image { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.5s; }
 .projectsLinks:hover .image { transform:scale(1.1) }
+
+/***************/
+/* END PROJET */
+/***************/
+
+#interetsSquares {
+  display: table;
+  width: 100%;
+}
+
+#interetsSquares>div {
+  display: table-cell;
+  background-color: #482728;
+}
+
+.interetsWrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.interetsHover {
+  position: absolute;
+  display: table;
+  width: inherit;
+  height: inherit;
+  top: 100%;
+  transition: top 0.3s ease-out;
+}
+.interetsWrap:hover .interetsHover{
+  top: 0%;
+}
+
+.interetsHoverText {
+  display: table-cell;
+  width: inherit;
+  height: inherit;
+  left: 0;
+  text-align: center;
+  font-size: 7.45vw;
+  vertical-align: middle;
+  color: rgba(255,255,255,0.6);
+  font-weight: bold;
+}
+
+.gifMusique { background: url('img/musique.gif') no-repeat; }
+.gifGameDesign { background: url('img/gamedesign.gif') no-repeat; }
+.gifUnity { background: url('img/unity2.gif') no-repeat; }
+.gifMusique, .gifGameDesign, .gifUnity { width: inherit; height: inherit; background-size: cover; background-position: center; }
