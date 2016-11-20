@@ -347,6 +347,8 @@ p { text-align: justify; font-size: 18px; width: 50%; margin: 0 auto 15px auto; 
   vertical-align: middle;
   color: rgba(255,255,255,0.6);
   font-weight: bold;
+  cursor: default;
+  user-select: none;
 }
 
 .gifMusique { background: url('img/musique.gif') no-repeat; }
