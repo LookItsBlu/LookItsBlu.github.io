@@ -310,6 +310,6 @@ p { text-align: justify; font-size: 18px; width: 50%; margin: 0 auto 15px auto; 
 }
 
 .gifMusique { background: url('img/musique.gif') no-repeat; }
-.gifGameDesign { background: url('img/gamedesign.gif') no-repeat; }
+.gifGameDesign { background: url('img/gamedesignstill.png') no-repeat; }
 .gifUnity { background: url('img/unity2.gif') no-repeat; }
 .gifMusique, .gifGameDesign, .gifUnity { width: inherit; height: inherit; background-size: cover; background-position: center; }
