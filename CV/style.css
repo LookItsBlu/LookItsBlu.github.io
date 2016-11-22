@@ -237,6 +237,7 @@ p { text-align: justify; font-size: 18px; width: 50%; margin: 0 auto 15px auto; 
 #projectsList {
 	display: table;
 	width: 100%;
+	border-spacing: 10px 5px;
 }
 .projectsColumn {
 	display: inline-table;;
