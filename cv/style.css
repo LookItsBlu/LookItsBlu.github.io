@@ -1,0 +1,359 @@
+/*light brown: #6C5353*/
+
+* { margin: 0; padding: 0; }
+
+body {
+  font-family: 'Product Sans', Arial, sans-serif;
+  background-color: #f1f1f1;
+  color: #555;
+  text-align: center;
+}
+
+h2 { font-size: 25px; color: #482728; margin: 30px 0; }
+h3 { font-size: 22px; font-weight: normal; margin: 20px 0; }
+
+p { text-align: justify; font-size: 18px; width: 50%; margin: 0 auto 15px auto; }
+
+/* TOP */
+.top {
+  position: fixed;
+  height: 75px;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #6c5353;
+  z-index: 999;
+}
+.parts {
+  list-style: none;
+  display: table;
+  height: inherit;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.parts li {
+  position: relative;
+  height: inherit;
+  float: left;
+  overflow: hidden;
+}
+.parts>li>a {
+  display: block;
+  height: inherit;
+  padding: 0 15px;
+  border-bottom: 8px solid #6c5353;
+  color: #333;
+  transition: all 0.2s;
+}
+.parts li:hover a { height: 67px; color: #6c5353; }
+.menuText { float: left; margin-top: 26px; font-size: 20px; }
+/* /TOP */
+
+
+/* MAIN */
+#mainPage { padding-top: 76px; }
+.pageDiv { position: absolute; top: 0; left: 0; pointer-events: none; }
+@keyframes arrowAnim {
+  0% { margin-bottom: 15px; }
+  40% { margin-bottom: 15px; }
+  35% { margin-bottom: 15px; opacity: 1; }
+  45% { margin-bottom: 5px; opacity: 0; }
+  46% { margin-bottom: 20px; }
+  56% { margin-bottom: 13px; opacity: 1; }
+  59% { margin-bottom: 15px; opacity: 1; }
+  100% { margin-bottom: 15px; }
+}
+.scrollArrow {
+  position: fixed;
+  bottom: 0;
+  font-size: 30px;
+  left: 50%;
+  margin-left: -9.45px;
+  margin-bottom: 15px;
+  animation: arrowAnim 3s infinite;
+}
+
+.image_bg {
+  display: inline-block;
+  height: 250px;
+  width: 100%;
+  background: #483737 url('img/image_bg.png') repeat-x left top;
+}
+
+.profilePic {
+  width: 125px;
+  height: 125px;
+  margin: 62.5px auto 0 auto;
+  border-radius: 50%;
+  background-color: #fff;
+  overflow: hidden;
+}
+.ppIcon {
+  display: block;
+  height: 119px;
+  margin: -24px 0 0 -11px;
+  padding-top: 3px;
+  zoom: 500%;
+}
+
+.presentationText { width: 100%; }
+
+
+.part { width: 100%; min-height: 100vh; display: inline-block; }
+/*#presentation { margin-bottom: 45vh; }*/
+#parcourScolaire { background-color: #DED7D7; }
+#formations { background-color: #CBBDBD; }
+#projets { background-color: #B7A3A3; }
+#interets { background-color: #A48989; }
+
+
+/********************/
+/* PARCOURSSCOLAIRE */
+/********************/
+
+#timeline:before {
+  content: attr(data-firstDate);
+  position: absolute;
+  left: 0;
+  top: 40%;
+  font-size: 15px;
+  color: #b7a3a3;
+  font-weight: bold;
+}
+#timeline:after {
+  content: attr(data-lastDate);
+  position: absolute;
+  right: 0;
+  top: 40%;
+  font-size: 15px;
+  color: #b7a3a3;
+  font-weight: bold;
+}
+#timeline {
+  position: relative;
+  display: table;
+  width: 70%;
+  height: 50px;
+  margin: 30vh auto 0 auto;
+}
+
+.pinsTop, .pinsBottom {
+  position: relative;
+  display: table;
+  width: calc(100% - 2px);
+  height: 40px;
+  text-align: left;
+}
+.pin {
+  display: inline-block;
+  position: absolute;
+  height: inherit;
+  min-width: 140px;
+  width: 7vw;
+  text-align: left;
+}
+.pin span {
+  display: inline-block;
+  height: inherit;
+  position: absolute;
+  overflow: hidden;
+  font-size: 14px;
+}
+.pinsTop span { bottom: 5px; }
+.pinsBottom span { top: 5px; }
+
+.pin:before {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: inherit;
+  margin-right: 5px;
+  background-color: #eee;
+}
+.pinsTop .pin:after {
+  content: attr(data-date);
+  position: absolute;
+  top: -30px;
+  border-bottom: 1px dotted #482728;
+}
+.pinsBottom .pin:after {
+  content: attr(data-date);
+  position: absolute;
+  bottom: -30px;
+  border-top: 1px dotted #482728;
+}
+
+.timelineBar {
+  display: table-row;
+  width: 100%;
+  height: 10px;
+  font-size: 0;
+  background-color: #eee;
+}
+
+/************************/
+/* END PARCOURSSCOLAIRE */
+/************************/
+
+/**************/
+/* FORMATIONS */
+/**************/
+
+#formationTable, #formationTable tr {
+  width: 40%;
+  height: 25px;
+  border-collapse: collapse;
+  margin: 10vh auto 0 auto;
+}
+
+#formationTable th {
+  border-bottom: 1px dotted #482728;
+  font-size: 20px;
+  text-align: left;
+  color: #482728;
+}
+#formationTable tr>*:first-child {
+  width: 25%;
+}
+#formationTable td:first-child {
+  text-align: center;
+}
+
+.formationBar {
+  background-color: #eee;
+  height: 19px;
+  line-height: 19px;
+  font-size: 28.5px;
+  color: #cbbdbd;
+}
+
+/******************/
+/* END FORMATIONS */
+/******************/
+
+/***********/
+/* PROJETS */
+/***********/
+
+#projectsList {
+	display: table;
+	width: 100%;
+	border-spacing: 10px 5px;
+}
+.projectsColumn {
+	display: inline-table;;
+	width: 50%;
+}
+
+.projectsRow {
+	display: inline-block; /*table-row;*/
+}
+
+.projectsLinks {
+    width: 300px;
+    height: 25vh;
+    background-color: #fff;
+	position: relative;
+    display: table-cell;
+	overflow: hidden;
+}
+.projectsLinks>a {
+	display: block;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+.projectsLinks>a:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, rgba(20,20,20,0.75), rgba(20,20,20,0) 75%);
+	opacity: 0;
+	transition: opacity 0.15s linear;
+}
+.projectsLinks span {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 2;
+	margin: 0 0 15px 15px;
+	width: 50%;
+	font-size: 2.5vh;
+	text-align: left;
+	color: #fff;
+	opacity: 0;
+	transition: opacity 0.15s linear;
+}
+.projectsLinks:hover a:after { opacity: 1; }
+.projectsLinks:hover a>span { opacity: 1; }
+
+/* PROJECT IMAGES */
+.DVR { background: url('img/DVR.png') no-repeat; }
+.Puzzle { background: url('img/puzzle.png') no-repeat; }
+.ListeNiveau { background: url('img/levelList.png') no-repeat; }
+.CreateurNiveau { background: url('img/editor.png') no-repeat; }
+.XML { background: url('img/SD.png') no-repeat; }
+.Wiki { background: url('img/wiik.png') no-repeat; }
+/*.Bug { background: url('img/bug.png') no-repeat; }*/
+/*.Seprote { background: url('img/seprote.png') no-repeat; }*/
+.ECV { background: url('img/CV.png') no-repeat; }
+
+
+.image { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.5s; }
+.projectsLinks:hover .image { transform:scale(1.1) }
+
+/***************/
+/* END PROJET */
+/***************/
+
+#interetsSquares {
+  display: table;
+  width: 100%;
+}
+
+#interetsSquares>div {
+  display: table-cell;
+  background-color: #482728;
+}
+
+.interetsWrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.interetsHover {
+  position: absolute;
+  display: table;
+  width: inherit;
+  height: inherit;
+  top: 100%;
+  transition: top 0.3s ease-out;
+}
+.interetsWrap:hover .interetsHover{
+  top: 0%;
+}
+
+.interetsHoverText {
+  display: table-cell;
+  width: inherit;
+  height: inherit;
+  left: 0;
+  text-align: center;
+  font-size: 7vw;
+  vertical-align: middle;
+  color: rgba(255,255,255,0.6);
+  font-weight: bold;
+  cursor: default;
+  user-select: none;
+}
+
+.gifMusique { background: url('img/musique.gif') no-repeat; }
+.gifGameDesign { background: url('img/gamedesign.gif') no-repeat; }
+.gifUnity { background: url('img/unity2.gif') no-repeat; }
+.gifMusique, .gifGameDesign, .gifUnity { width: inherit; height: inherit; background-size: cover; background-position: center; }
