@@ -169,6 +169,10 @@ p { text-align: justify; font-size: 18px; width: 50%; margin: 0 auto 15px auto; 
 .pinsTop span { bottom: 5px; }
 .pinsBottom span { top: 5px; }
 
+.HQE1 span, .HQE2 span, .IUT span {
+    font-weight: bold;
+}
+
 .pin:before {
   content: '';
   display: inline-block;
