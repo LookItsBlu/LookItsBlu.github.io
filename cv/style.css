@@ -1,5 +1,13 @@
 /*light brown: #6C5353*/
 
+/* fixes for things unsupported by mozilla (mainly the zoom property) */
+@-moz-document url-prefix() {
+  img.ppIcon {
+	-moz-transform: scale(5);
+	margin: 125px 0 0 50px;
+  }
+}
+
 * { margin: 0; padding: 0; }
 
 body {
@@ -240,7 +248,7 @@ p { text-align: justify; font-size: 18px; width: 50%; margin: 0 auto 15px auto; 
 	border-spacing: 10px 5px;
 }
 .projectsColumn {
-	display: inline-table;;
+	display: table-cell;
 	width: 50%;
 }
 

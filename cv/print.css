@@ -1,7 +1,29 @@
-@page { margin: 0; }
+@page { margin: 0; body { margin: 1.6cm; } }
 
+/* fixes for things unsupported by mozilla (mainly the zoom property) */
+@-moz-document url-prefix() {
+  img.ppIcon {
+	-moz-transform: scale(2.5);
+	margin: 31px 0 0 13px;
+  }
+  
+  div.presentationText {
+	-moz-transform: scale(0.75);
+	margin-top: -30px;
+  }
+  
+  div#timeline {
+	-moz-transform: scale(0.5);
+	margin-top: -5px;
+  }
+  
+  table#formationTable {
+	-moz-transform: scale(0.4);
+	margin-top: -80px;
+  }
+}
 
-* { margin: 0; padding: 0; -webkit-print-color-adjust: exact;  }
+* { margin: 0; padding: 0; -webkit-print-color-adjust: exact; -moz-print-color-adjust: exact;  }
 
 body {
   font-family: 'Product Sans', Arial, sans-serif;
@@ -197,7 +219,7 @@ p { text-align: justify; font-size: 18px; width: 50%; margin: 0 auto 15px auto; 
     border-spacing: 10px 5px;
 }
 .projectsColumn {
-	display: inline-table;;
+	display: table-cell;
 	width: 50%;
 }
 .projectsColumn h3 { margin-top: 0!important; }
