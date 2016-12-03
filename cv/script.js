@@ -26,7 +26,7 @@ $(document).ready(function() {
 	
 	//TIMELINE POSITION
 	currentTime = new Date();
-	$("#timeline").attr("data-lastDate", currentTime.getDate()+"/"+(currentTime.getMonth()+1)+"/"+currentTime.getFullYear());
+	$("#timeline").attr("data-lastDate", (("0" + currentTime.getDate()).slice(-2))+"/"+(("0" + (currentTime.getMonth() + 1)).slice(-2))+"/"+currentTime.getFullYear());
 	
 	var firstDate = $("#timeline").attr("data-firstDate").split("/").reverse().join("");
 	var lastDate = $("#timeline").attr("data-lastDate").split("/").reverse().join("");
