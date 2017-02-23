@@ -48,8 +48,8 @@ $(document).ready(function(){
     });
 
     $(".mediaVolume .ui-slider-handle").dblclick(function(){
-        $(".mediaVolume").slider({ value: 100 });
-        $("#Musique").get(0).volume = 1;
+        $(".mediaVolume").slider({ value: 50 });
+        $("#Musique").get(0).volume = 0.5;
     });
 
     //TimeLine

@@ -42,8 +42,10 @@ function framelooper() {
 
             bar_height = -(fbcArray[i] / bar_height_sensibility);
 
-            ctx.fillRect(bar_x, canvas.height/2, bar_width, bar_height/2);
-            ctx.fillRect(bar_x, canvas.height/2, bar_width, -bar_height/2);
+            ctx.fillRect(bar_x, canvas.height/2, bar_width, bar_height/2, 10);
+            ctx.strokeRect(bar_x, canvas.height/2, bar_width, bar_height/2, 10);
+            ctx.fillRect(bar_x, canvas.height/2, bar_width, -bar_height/2, 10);
+            ctx.strokeRect(bar_x, canvas.height/2, bar_width, -bar_height/2, 10);
         }
     }
 
@@ -99,9 +101,10 @@ function framelooperIdle() {
             }
 
             bar_height = -(fbcArray[i] / bar_height_sensibility);
-
-            ctx.fillRect(bar_x, canvas.height/2, bar_width, bar_height/2);
-            ctx.fillRect(bar_x, canvas.height/2, bar_width, -bar_height/2);
+            ctx.fillRect(bar_x, canvas.height/2, bar_width, bar_height/2, 10000);
+            ctx.strokeRect(bar_x, canvas.height/2, bar_width, bar_height/2, 10000);
+            ctx.fillRect(bar_x, canvas.height/2, bar_width, -bar_height/2, 50);
+            ctx.strokeRect(bar_x, canvas.height/2, bar_width, -bar_height/2, 50);
         }
     }
 
@@ -119,7 +122,7 @@ function framelooperIdle() {
 }
 
 function idleSine(i){
-    increase = 90/180*Math.PI / 90;
+    increase = 90/15*Math.PI / 89.77;
     y = Math.sin(counter) * 175;
     if(y<0){ y = -y; }
     counter += increase;
