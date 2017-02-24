@@ -21,10 +21,11 @@ $(document).ready(function(){
     //Play/Pause
     $(".playBtn").on("click", function (){
         if (PlayPauseState == 0) {
+            PlayPauseState = 1;
             $(this).addClass("playBtnON");
             $("#Musique").get(0).play();
-            PlayPauseState = 1;
             visualizerStart();
+            updateTimeline();
         }
         else {
             $(this).removeClass("playBtnON");
@@ -53,13 +54,16 @@ $(document).ready(function(){
     });
 
     //TimeLine
-    $("#Musique").bind("timeupdate", function (){
+    //$("#Musique").bind("timeupdate", function (){
+    function updateTimeline(){
         var mediaTime = 0;
         if ($("#Musique").get(0).currentTime > 0) {
             mediaTime = (100 / $("#Musique").get(0).duration) * $("#Musique").get(0).currentTime;
         }
         $(".mediaTimelineInner").css("width", mediaTime + "%");
 
+
+        //TIME DISPLAY
         /*
         var currentTimeSeconds = "00";
         var totalTimeSeconds = "00";
@@ -74,11 +78,14 @@ $(document).ready(function(){
 
         var currentTime = Math.floor(Musique.currentTime/60)+ ":" +currentTimeSeconds;
         var totalTime = Math.floor(Musique.duration/60)+ ":" +totalTimeSeconds;
-        $("#mediaCurrentTime").html(currentTime);
-        $("#mediaTotalTime").html(totalTime);
-        $("#mediaTime").html(currentTime+ " / " +totalTime);
+        $(".mediaCurrentTime").html(currentTime);
+        $(".mediaTotalTime").html(totalTime);
+        $(".mediaTime").html(currentTime+ " / " +totalTime);
         */
-    });
+
+        window.requestAnimationFrame(updateTimeline);
+    }
+    //});
 
     $(".mediaTimelineOuter").click(function(e){
         var clickPos = (e.pageX) - this.offsetLeft;
@@ -109,6 +116,8 @@ $(document).ready(function(){
         if(SongIndex==songTotal) {
             $(".playBtn").click();
             $("#Musique").stop();
+            SongIndex=1;
+            listSongs();
         } else {
             SongIndex++;
             listSongs();

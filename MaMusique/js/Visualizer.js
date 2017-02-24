@@ -10,7 +10,7 @@ function initVisualizer() {
     ctx = canvas.getContext('2d');
     ctx.fillStyle = visualizerColor;
     Musique = document.getElementById("Musique");
-    analyser.smoothingTimeConstant = 0.5;
+    analyser.smoothingTimeConstant = 0.6;
     source = context.createMediaElementSource(Musique);
     source.connect(analyser);
     analyser.connect(context.destination);
@@ -64,7 +64,6 @@ function framelooper() {
 
 function visualizerStart() {
     if (!requestIdVisualizer) {
-        visualizerIdleStop();
         framelooper();
     }
 }
@@ -80,8 +79,8 @@ function visualizerStop() {
 
 
 
-var counter, y, increase;
-counter = 0, y=0;
+var counter, y, increase, size;
+counter = 0, y=0, size=10;
 function framelooperIdle() {
     now = Date.now();
     delta = now - then;
@@ -110,7 +109,7 @@ function framelooperIdle() {
 
     if(Musique.paused==false){
         var allMuted = true;
-        for (i=0; i < bars; i++) {
+        for (i=0; i < 359; i++) {
             if(fbcArray[i]>11){
                 allMuted = false;
             }
@@ -123,7 +122,8 @@ function framelooperIdle() {
 
 function idleSine(i){
     increase = 90/15*Math.PI / 89.77;
-    y = Math.sin(counter) * 175;
+    if(size<175){ size*=1.00025; }
+    y = Math.sin(counter) * size;
     if(y<0){ y = -y; }
     counter += increase;
     fbcArray[i]=y;
@@ -131,6 +131,7 @@ function idleSine(i){
 
 function visualizerIdleStart() {
     if (!requestIdVisualizerIdle) {
+        size=10;
         framelooperIdle();
     }
 }
@@ -141,19 +142,6 @@ function visualizerIdleStop() {
         requestIdVisualizerIdle = undefined;
     }
 }
-
-/*
-
-var counter = 0, y=0;
-
-var increase = 90/180*Math.PI / 9;
-for(i=0; i<=360; i+=10){
-    y = Math.sin(counter) * 120;
-    counter += increase;
-    console.log(y);
-}
-
-*/
 
 $("document").ready(function(){
     $("#visualizer").attr("width", window.innerWidth);
