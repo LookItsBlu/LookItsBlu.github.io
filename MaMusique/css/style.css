@@ -1,3 +1,7 @@
+/*====================================*/
+/*           Slider Styling           */
+/*====================================*/
+
 .ui-tooltip {
   font-size: 15px!important;
   border-radius: 0px!important;
@@ -8,7 +12,7 @@
   width: 15px!important;
   margin-left: -7.5px!important;
   height: 20px!important;
-  background: #262626!important;
+  background: #000!important;
   border: none!important;
   border-radius: 0px!important;
   transition: box-shadow 0.25s ease-in!important;
@@ -16,73 +20,84 @@
 }
 .ui-state-hover {
   border: none!important;
-  box-shadow: 0 0 4px 0 #0c0c0c!important;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1)!important;
 }
 .ui-widget-header {
   border: none!important;
-  background: #999999!important;
+  background: rgba(0, 0, 0, 0.05)!important;
   border-radius: 0px!important;
 }
 
-@font-face {
-    font-family: Gidole;
-    src: url(fonts/Gidole-Regular.otf);
-}
+
+
+/*====================================*/
+/*              General               */
+/*====================================*/
+
+@font-face { font-family: Gidole; src: url(fonts/Gidole-Regular.otf); }
 
 *{ font-family: 'Gidole'; padding: 0; margin: 0; }
 
-.logo { height: 100px; margin-left: 15px; }
+a {
+  color: #000;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #000;
+  transition: padding-bottom 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+a:hover { color: #1ad445; text-decoration: none; padding-bottom: 1px; border-bottom: 1px solid #1ad445; }
 
-.albumCoverPlay {
-    position: absolute;
-    display: inline-block;
-    width: 150px;
-    height: 150px;
-    border-radius: 150px;
-    overflow: hidden;
+
+
+/*====================================*/
+/*               Header               */
+/*====================================*/
+
+header { height: 100px; margin-bottom: 20px; }
+
+.logo { height: inherit; margin-left: 15px; }
+
+nav {
+  position: absolute;
+  vertical-align: middle;
+  text-align: right;
+  top: 40px;
+  right: 20px;
 }
 
-.coverImg { width: 150px; position: absolute; }
-.playBtn {
-    position: absolute;
-    padding: 0;
-    width: 150px;
-    height: 150px;
-    border: 0;
-    background-color: rgba(0,0,0,0);
-    outline: none;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-}
-.albumCoverPlay:hover .playBtn { opacity: 0.75; }
+nav a { margin-right: 20px; }
 
-.playBtnON { opacity: 0.75!important; }
+.search {
+  height: 30px;
+  text-align: center;
+  width: 200px;
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: 0;
+  font-size: 16px;
+}
 
 /*====================================*/
 /*            Media player            */
 /*====================================*/
 
-/* Visualizer */
-.visualizerContainer {overflow: hidden;}
+.visualizerContainer {overflow: hidden; margin-left: 8px; }
 
-/* media player general */
 .mediaName {
-  color: #d9d9d9;
-  overflow: hidden;
   white-space: nowrap;
-  height: 30px;
-  line-height: 20px;
-  -webkit-user-select: all;
-  -moz-user-select: all;
   cursor: text;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 10px;
+  height: 35px;
+  margin: 10px 0 20px 0;
 }
 
-/* complete media player */
 .mediaTimelineOuter {
   width:100%;
   height:7px;
   margin-top: 10px;
-  background-color:#eee;
+  background-color:rgba(0, 0, 0, 0.05);
   cursor: pointer;
   position: relative;
 }
@@ -93,6 +108,7 @@
   left: 0;
   top: 0;
 }
+
 /*.mediaCurrentTime {
   font-size: 16px;
   top: 90px;
@@ -104,8 +120,7 @@
   right: 7px;
 }*/
 
-/* option panel sliders */
-.mediaVolume {
+/*.mediaVolume {
   width: 244px;
   height: 10px;
   margin: 10px auto 5px auto;
@@ -113,4 +128,44 @@
   border-radius: 0px;
   border: none;
   cursor: pointer;
+}*/
+
+/*====================================*/
+/*           Album Listing            */
+/*====================================*/
+
+#Albums { display: table; width: 100%; }
+#Albums article { display: table-cell; }
+#Albums article>div { display: table; margin-left: 150px; }
+
+.coverButton { display: table-cell; }
+
+.coverImg { display: inline-block; width: 150px; position: absolute; border-radius: 150px; }
+.playBtn {
+  padding: 0;
+  width: 150px;
+  height: 150px;
+  border: 0;
+  background-color: rgba(0,0,0,0);
+  outline: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
 }
+.playBtn:hover{ opacity: 0.4; }
+
+.playBtnON { opacity: 0.75!important; }
+
+.arrowCenter{ display: table-cell; height: inherit; vertical-align: middle; }
+.arrow { height: 75px; }
+.arrowHover {
+  position: absolute;
+  height: 79px;
+  margin-top: -2px;
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.1s opacity ease-in-out;
+}
+.arrowCenter:hover .arrowHover { opacity: 1; }
+
+
+.songList li { cursor: pointer; }

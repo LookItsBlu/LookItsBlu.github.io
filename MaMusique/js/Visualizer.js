@@ -9,8 +9,9 @@ function initVisualizer() {
     canvas = document.getElementById("visualizer");
     ctx = canvas.getContext('2d');
     ctx.fillStyle = visualizerColor;
+    ctx.strokeStyle = visualizerColor;
     Musique = document.getElementById("Musique");
-    analyser.smoothingTimeConstant = 0.6;
+    analyser.smoothingTimeConstant = 0.4;
     source = context.createMediaElementSource(Musique);
     source.connect(analyser);
     analyser.connect(context.destination);
@@ -73,6 +74,7 @@ function visualizerStop() {
         window.cancelAnimationFrame(framelooper);
         requestIdVisualizer = undefined;
     }
+    size=10;
     visualizerIdleStart();
 }
 

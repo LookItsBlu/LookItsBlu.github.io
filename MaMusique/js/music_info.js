@@ -1,28 +1,54 @@
 $(document).ready(function(){
     var url = "";
-    var currentAlbum = 1;
-    var SongIndex = 1;
-    var songTotal = 1;
+    var currentAlbum;
+    var SongIndex = 0;
+    var songTotal = 0;
     var tweenSongs = 0;
     var songList = [];
-    var songListNumber = 1;
+    var songListNumber = 0;
     var PlayPauseState = 0;
 
     //Media Player Initialize & Misc. functions
-    function listSongs() {
+    function updateSong() {
         $("#Musique").html("");
-        url = "Musiques/"+ SONGS[currentAlbum][0] +"/"+ SONGS[currentAlbum][1][SongIndex-1] +".mp3";
-        $("#Musique").attr("src", url);
-        $(".mediaName span").html(SONGS[currentAlbum][0]+" - "+SONGS[currentAlbum][1][SongIndex-1]);
 
-        songTotal = SONGS[currentAlbum][1].length;
+        url = "Musiques/"+ SONGS[currentAlbum][0] +"/"+ SONGS[currentAlbum][1][SongIndex] +".mp3";
+        $("#Musique").attr("src", url);
+        $(".mediaName span").html(SONGS[currentAlbum][0]+" // "+SONGS[currentAlbum][1][SongIndex]);
+
+        $(".songList li").css("color", "#000");
+        $(".albumlisting:eq("+currentAlbum+") .songList li:eq("+SongIndex+")").css("color", "#1ad445");
+
+        songTotal = SONGS[currentAlbum][1].length-1;
+    }
+
+    function changeAlbum(clickedElem){
+      $(".albumlisting:eq("+currentAlbum+") .songList li").css("color", "#000"); //removes the color of the songList
+      $(".playBtnON").click();  //simulates a click on the current album's play button to stop the album
+      currentAlbum=$(".playBtn").index(clickedElem);  //change album ID to the current album
+      PlayPauseState=0;  //reset play/pause state to count this click as a "play" click
+      SongIndex=0;  //start at first song
+      updateSong(); //update song url and name
     }
 
     //Play/Pause
     $(".playBtn").on("click", function (){
+        if(currentAlbum != undefined && $(".playBtn").index(this) != currentAlbum){
+            changeAlbum(this);  //if an album is playing AND the selected album is not the one playing, change it
+        }
+
         if (PlayPauseState == 0) {
             PlayPauseState = 1;
             $(this).addClass("playBtnON");
+
+            if(currentAlbum == undefined){
+                currentAlbum=$(".playBtn").index(this);
+                updateSong();
+            } else {
+                currentAlbum=$(".playBtn").index(this);
+                //no need to update the song again, as it's already loaded (this also prevents the music from restarting from the start)
+            }
+
             $("#Musique").get(0).play();
             visualizerStart();
             updateTimeline();
@@ -35,6 +61,7 @@ $(document).ready(function(){
     });
 
     //Volume Slider
+    /*
     $(".mediaVolume").slider({
         orientation: "horizontal",
         range: "min",
@@ -52,6 +79,7 @@ $(document).ready(function(){
         $(".mediaVolume").slider({ value: 50 });
         $("#Musique").get(0).volume = 0.5;
     });
+    */
 
     //TimeLine
     //$("#Musique").bind("timeupdate", function (){
@@ -61,7 +89,6 @@ $(document).ready(function(){
             mediaTime = (100 / $("#Musique").get(0).duration) * $("#Musique").get(0).currentTime;
         }
         $(".mediaTimelineInner").css("width", mediaTime + "%");
-
 
         //TIME DISPLAY
         /*
@@ -106,27 +133,71 @@ $(document).ready(function(){
             $("#Musique").get(0).currentTime = (percentage * $("#Musique").get(0).duration)/100;
         });
     });
-    $(document).mouseup(function(){
-        $("html").off("mousemove");
-    });
+    $(document).mouseup(function(){  $("html").off("mousemove");  });
 
     //AutoPlay Next Track
     $("#Musique").bind("ended", function (){
         //Play random track
         if(SongIndex==songTotal) {
-            $(".playBtn").click();
+            $(".playBtnON").click();
             $("#Musique").stop();
-            SongIndex=1;
-            listSongs();
+            SongIndex=0;
+            updateSong();
         } else {
             SongIndex++;
-            listSongs();
+            updateSong();
             $("#Musique").get(0).play();
         }
     });
 
 
+    $(".songList li").click(function(){
+      if(currentAlbum != undefined && $(".songList").index($(this).parent()) != currentAlbum){
+          changeAlbum($(this).parent().parent().find(".playBtn"));
+          //if an album is playing AND the selected song is not from the one playing, change it
+      }
+      currentAlbum=$(".songList").index($(this).parent());
+      SongIndex=$(".songList:eq("+currentAlbum+") li").index(this);
+
+      updateSong();
+      visualizerStart();
+      $(this).parent().parent().find(".playBtn").click();
+      $("#Musique").get(0).play();
+    });
+
+
+    $(".arrowCenter").click(function(){
+      if($(this).find(".arrow").hasClass("previous")){
+        if(currentAlbum != undefined && $(".arrow.previous").index($(this).find(".arrow")) != currentAlbum){
+          changeAlbum($(this).parent().find(".playBtn"));
+          //if an album is playing AND the selected song is not from the one playing, change it
+        } else {
+          SongIndex==0 ? SongIndex=songTotal : SongIndex--;
+          currentAlbum=$(".arrow.previous").index($(this).find(".arrow"));
+        }
+
+        updateSong();
+        visualizerStart();
+        $(this).parent().find(".playBtn").click();
+        $("#Musique").get(0).play();
+      }
+      if($(this).find(".arrow").hasClass("next")){
+        if(currentAlbum != undefined && $(".arrow.next").index($(this).find(".arrow")) != currentAlbum){
+          changeAlbum($(this).parent().find(".playBtn"));
+          //if an album is playing AND the selected song is not from the one playing, change it
+        } else {
+          SongIndex==songTotal ? SongIndex=0 : SongIndex++;
+          currentAlbum=$(".arrow.next").index($(this).find(".arrow"));
+        }
+
+        updateSong();
+        visualizerStart();
+        $(this).parent().find(".playBtn").click();
+        $("#Musique").get(0).play();
+      }
+    });
+
+
     //Launch Media Player Initialisation
     $("#Musique").get(0).volume = 0.5;
-    listSongs();
 });
