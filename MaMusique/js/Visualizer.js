@@ -11,7 +11,10 @@ function initVisualizer() {
     ctx.fillStyle = visualizerColor;
     ctx.strokeStyle = visualizerColor;
     Musique = document.getElementById("Musique");
-    analyser.smoothingTimeConstant = 0.4;
+
+    if(navigator.userAgent.search("Firefox")) { analyser.smoothingTimeConstant = 0.6; }
+    else { analyser.smoothingTimeConstant = 0.4; }
+
     source = context.createMediaElementSource(Musique);
     source.connect(analyser);
     analyser.connect(context.destination);
