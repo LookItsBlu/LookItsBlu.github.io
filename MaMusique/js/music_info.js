@@ -168,8 +168,11 @@ $(document).ready(function(){
 
     $(".arrowCenter").click(function(){
       if($(this).find(".arrow").hasClass("previous")){
+        if(currentAlbum == undefined ) { $(this).parent().find(".playBtn").click(); }
+
         if(currentAlbum != undefined && $(".arrow.previous").index($(this).find(".arrow")) != currentAlbum){
           changeAlbum($(this).parent().find(".playBtn"));
+          $(this).parent().find(".playBtn").click();
           //if an album is playing AND the selected song is not from the one playing, change it
         } else {
           SongIndex==0 ? SongIndex=songTotal : SongIndex--;
@@ -178,12 +181,14 @@ $(document).ready(function(){
 
         updateSong();
         visualizerStart();
-        $(this).parent().find(".playBtn").click();
         $("#Musique").get(0).play();
       }
       if($(this).find(".arrow").hasClass("next")){
+        if(currentAlbum == undefined ) { $(this).parent().find(".playBtn").click(); }
+
         if(currentAlbum != undefined && $(".arrow.next").index($(this).find(".arrow")) != currentAlbum){
           changeAlbum($(this).parent().find(".playBtn"));
+          $(this).parent().find(".playBtn").click();
           //if an album is playing AND the selected song is not from the one playing, change it
         } else {
           SongIndex==songTotal ? SongIndex=0 : SongIndex++;
@@ -192,7 +197,6 @@ $(document).ready(function(){
 
         updateSong();
         visualizerStart();
-        $(this).parent().find(".playBtn").click();
         $("#Musique").get(0).play();
       }
     });
