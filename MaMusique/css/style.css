@@ -134,9 +134,9 @@ nav a { margin-right: 20px; }
 /*           Album Listing            */
 /*====================================*/
 
-#Albums { display: table; width: 100%; }
-#Albums article { display: table-cell; }
-#Albums article>div { display: table; margin-left: 150px; }
+#Albums { display: table; margin: 0 auto; text-align: center; }
+#Albums article { display: inline-table; width: 300px; }
+#Albums article>div { display: table; margin: 0 auto; }
 
 .coverButton { display: table-cell; }
 
