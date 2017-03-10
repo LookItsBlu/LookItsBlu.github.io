@@ -20,7 +20,27 @@
 <body>
   <header id="Accueil">
     <img class="logo" src="src/logo.png" alt="Logo"/>
+    
+    <div class="mobileOnly">
+      <div id="nav-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
+      <div class="slideMenu">
+        <ul>
+          <li><input class="search" type="search" placeholder="Recherche"></li>
+          <li><a href="#Accueil">Accueil</a></li>
+          <li><a href="#Albums">Ma Musique</a></li>
+          <li><a href="#Contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <a class="phone" href="+tel111111"><img src="src/phone.png" alt="Me Contacter"></a>
+    
     <nav>
       <a href="#Accueil">Accueil</a>
       <a href="#Albums">Ma Musique</a>
@@ -141,19 +161,61 @@
   </section>
 
 
-  <section>
-
+  <section id="About">
+    <article class="description">
+      <h1>Ma Musique</h1>
+      <p>
+      Ma Musique est un site ayant pour but de partager des musiques que j'écoute regulièrement pour vous les faire découvrir.
+      </p>
+      
+      <p>
+      Je n'ai pas de genre de musique préfére, ma liste d'écoute contient a la fois du sythwave (<a href="https://timecop1983.bandcamp.com/album/lovers-ep-part-i">Timecop1983</a>), de l'idm (<a href="https://c418.bandcamp.com/album/148">C418</a>), du psytrance (<a href="https://arabdigitalhommegaproductions.bandcamp.com/album/return-to-the-sauce">Infected Mushroom</a>), et du glitch hop (<a href="https://slynk.bandcamp.com/album/get-busy">Slynk</a>), donc attendez-vous a voir des musiques très variés!
+      </p>
+      
+      <p>
+      Enfin, si vous avez un album a me suggérer, n'hesitez-pas a utiliser le formulaire si dessous!
+      </p>
+    </article>
   </section>
+  
+  <section id="contact">
+    <article class="GMaps">
+      <h1>Ma Ville</h1>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1056.8580569596588!2d1.8785313959100252!3d50.94875501476019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1489132426116" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </article>
 
-  <div class="separator"></div>
+    <div class="separator"></div>
 
-  <section>
-
+    <article class="formulaire">
+      <h1>Contact</h1>
+      <form>
+        <input type="text" placeholder="Prénom" class="inputPrenom"> <input type="text" placeholder="Nom" class="inputNom">
+        <br/>
+        <input type="date" placeholder="Date de naissance" class="inputDDN"> <input type="text" placeholder="Ville de naissance" class="inputVille">
+        <br/>
+        <input type="email" placeholder="Adresse email" class="inputEmail fullwidth">
+        <br/>
+        <input type="file" placeholder="Photo" class="inputPhoto fullwidth">
+        <br/>
+        <textarea placeholder="Message" class="inputMessage fullwidth"></textarea>
+        <br/>
+        <button class="formSend">Envoyer</button>
+      </form>
+    </article>
   </section>
-
+  
+  <footer>
+    <span>Lenglet Anthony TPA</span>
+  </footer>
+  
   <audio id="Musique"></audio>
 
   <script src="js/Visualizer.js"></script>
+  <script>
+  $('#nav-icon').click(function(){
+    $(this).parent().toggleClass('open');
+  });
+  </script>
 </body>
 
 </html>
