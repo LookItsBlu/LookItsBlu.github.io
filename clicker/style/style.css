@@ -1,0 +1,98 @@
+body { margin: 0; }
+
+.ressourceList {
+    display: inline-block;
+    width: 300px;
+    padding: 10px 50px;
+    border-right: 5px solid black;
+}
+
+.ressource {
+    width: 300px;
+    padding: 10px 0;
+    border-bottom: 1px solid black;
+}
+.ressource:last-child {
+    border-bottom: none;
+}
+
+.ressource .requirement {
+    display: block;
+    color: red;
+    font-size: 12px;
+}
+
+.ressource .title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.ressource .quantityWrapper {
+    float: right;
+}
+
+.progressOuter {
+    width: 100%;
+    height: 15px;
+    margin: 5px 0 10px 0;
+    background-color: #f3f3f3;
+}
+
+.progressInner {
+    height: inherit;
+    float: left;
+    background-color: greenyellow;
+}
+
+.createRessource {
+    width: 100%;
+    height: 25px;
+}
+
+
+
+
+
+.upgradeList {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    padding: 10px 50px;
+    border-right: 5px solid black;
+}
+
+.upgradeSublist {
+    display: inline-grid;
+    width: 350px;
+}
+
+.upgrade {
+    width: 300px;
+    padding: 10px 0;
+    border-bottom: 1px solid black;
+}
+.upgrade:last-child {
+    border-bottom: none;
+}
+
+.upgrade .requirement {
+    display: block;
+    color: red;
+    font-size: 12px;
+}
+
+.upgrade .title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.upgrade .description {
+    display: block;
+    padding: 3px 0 8px 0;
+    font-size: 12px;
+}
+
+.unlockUpgrade {
+    width: 100%;
+    height: 25px;
+}
